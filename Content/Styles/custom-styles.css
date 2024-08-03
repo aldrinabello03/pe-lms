@@ -2,16 +2,6 @@
     padding: 0 !important;
 }
 
-.form-control {
-    max-width: 100% !important;
-    width: 100% !important;
-}
-
-.section-screen{
-    min-width: 100dvw;
-    min-height: 100dvh;
-}
-
 .center-items{
     display: flex;
     align-items: center;
@@ -19,26 +9,7 @@
     flex-direction: column;
 }
 
-.image-container {
-    position: relative;
-    width: 50dvw;
-    height: 100dvh;
-}
-
-.login-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .footer-size{
     font-size: .75rem;
     margin: 0;
-}
-
-.card-form{
-    width: auto;
 }

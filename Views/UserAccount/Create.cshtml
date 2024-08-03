@@ -1,54 +1,64 @@
 ﻿@model PELMS.Models.ViewModels.RegsitrationViewModel
-
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
 @{
     ViewBag.Title = "Register";
 }
 
-<h2>Register</h2>
+<div class="row vh-100 vw-100 g-0">
+    <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center image-container">
+        <img src="@Url.Content("~/Content/Images/caucasian-woman-practicing-yoga-home.jpg")" class="login-image" alt="login image">
+    </div>
+    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center">
+        <div class="card card-size">
+            <div class="card-body p-5 d-flex flex-column justify-content-center align-items-center card-form">
+                <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+                    <img src="@Url.Content("~/Content/Images/pe-logo-sample.jpg")" alt="logo-temporary" class="img-thumbnail" />
+                </div>
+                <div class="w-100">
+                    @using (Html.BeginForm()) 
+                        {
+                            @Html.AntiForgeryToken()
+                            
+                            <div class="mb-3 w-100">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            </div>
+                            
+                            <div class="mb-3 w-100">
+                                @Html.LabelFor(model => model.UserName, new { @class = "form-label" })
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your username" } })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
 
+                            <div class="mb-3 w-100">
+                                @Html.LabelFor(model => model.Password, new { @class = "form-label"})
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger "})
+                            </div>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UserAccount</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="mb-3 w-100">
+                                @Html.LabelFor(model => model.Role, new { @class = "form-label" })
+                                @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter role (e.g, Student)" } })
+                                @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Register" class="btn btn-default" />
+                            <div class="d-grid gap-2 mb-3 w-100">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        }
+                    <div class="d-grid gap-2 w-100">
+                        @Html.ActionLink("Sample Register", "Login", "UserAccount", null, new { @class = "btn btn-outline-primary"})
+                    </div>
+                </div>
+                @Html.Partial("_Footer")
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <!-- Background image for smaller screens -->
+    <div class="col-12 d-md-none register-background-image">
+        <img src="@Url.Content("~/Content/Images/caucasian-woman-practicing-yoga-home.jpg")" class="img-fluid" alt="login image">
+    </div>
 </div>
 
 @section Scripts {
