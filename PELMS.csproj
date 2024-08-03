@@ -156,9 +156,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Images\caucasian-woman-practicing-yoga-home.jpg" />
+    <Content Include="Content\Images\full-shot-man-sitting-yoga-mat.jpg" />
+    <Content Include="Content\Images\pe-logo-sample.jpg" />
+    <Content Include="Content\Styles\custom-styles.css" />
+    <Content Include="Content\Styles\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -206,6 +211,9 @@
     <Content Include="Views\TeacherProfile\Edit.cshtml" />
     <Content Include="Views\TeacherProfile\Index.cshtml" />
     <Content Include="Views\UserAccount\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_SideNav.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

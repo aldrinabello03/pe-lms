@@ -24,7 +24,9 @@ namespace PELMS
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Styles/site.css",
+                      "~/Content/Styles/custom-styles.css",
+                      "~/Content/Styles/login.css"));
         }
     }
 }
