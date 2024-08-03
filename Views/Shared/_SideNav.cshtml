@@ -1,28 +1,38 @@
-<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white min-vh-100">
-        @Html.ActionLink("PE LMS", "Index", "Home", new { area = "" }, new { @class = "d-flex align-items-center pb-2 mb-md-0 me-md-auto text-white text-decoration-none fs-3" })
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="nav-item">
-                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Login", "Login", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Register", "Create", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Student Profile", "Create", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Teacher Profile", "Create", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0" })
-            </li>
-        </ul>
-    </div>
+<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white">
+    <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center pb-2 mb-md-0 me-md-auto text-decoration-none w-100">
+        <img src="@Url.Content("~/Content/Images/pe-logo-sample.jpg")" alt="PE LMS" class="img-fluid rounded w-100">
+    </a>
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+        <li class="nav-item w-100">
+            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+        <li class="nav-item w-100">
+            @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+        <li class="nav-item w-100">
+            @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+        <li class="nav-item w-100">
+            @Html.ActionLink("Login", "Login", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+        <li class="nav-item w-100">
+            @Html.ActionLink("Register", "Create", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+        <li class="nav-item w-100">
+            @Html.ActionLink("Student Profile", "Create", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+        <li class="nav-item w-100">
+            @Html.ActionLink("Teacher Profile", "Create", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+        </li>
+    </ul>
+</div>
+<div class="px-3 pb-4 w-100">
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
+        <li class="nav-item w-100">
+            @Html.ActionLink("Username", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+        </li>
+        <li class="nav-item w-100 mt-3 text-white">
+            @Html.Partial("_Footer")
+        </li>
+    </ul>
 </div>

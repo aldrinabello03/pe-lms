@@ -26,7 +26,12 @@ namespace PELMS
                       "~/Content/bootstrap.css",
                       "~/Content/Styles/site.css",
                       "~/Content/Styles/custom-styles.css",
-                      "~/Content/Styles/login.css"));
+                      "~/Content/Styles/login.css",
+                      "~/Content/Styles/StudentCreate.css"));
+
+            bundles.Add(new StyleBundle("~/lib/fontawesome").Include(
+                      "~/lib/font-awesome/css/all.css"
+                ));
         }
     }
 }
