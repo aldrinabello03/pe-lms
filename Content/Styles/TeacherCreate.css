@@ -1,0 +1,11 @@
+﻿.teach-img-bg{
+    width: 70dvw;
+    height: auto;
+    background: url('../Images/teacher-create-image.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.card-size-teacher{
+    width: 30dvw;
+}

@@ -13,64 +13,51 @@
         @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-outline-primary" })
     </div>
 
-    <div class="card border-0">
-        <div class="card-body row">
-            <div class="col d-flex flex-column justify-content-center align-items-center">
+    <!-- Background Image Wrapper -->
+    <div class="container p-3 m-2 rounded d-flex justify-content-end teach-img-bg">
+        <div class="card card-size-teacher">
+            <div class="card-body d-flex flex-column">
                 @using (Html.BeginForm()) 
-                    {
-                        @Html.AntiForgeryToken()
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                        <div class="border mb-3 p-3 rounded">
-                            <p class="fs-5 fw-bolder">Teacher Information</p>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    @Html.LabelFor(model => model.EmployeeNumber, htmlAttributes: new { @class = "form-label" })
-                                    @Html.EditorFor(model => model.EmployeeNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.EmployeeNumber, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col">
-                                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "form-label" })
-                                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "form-label" })
-                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col">
-                                    @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "form-label" })
-                                    @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col">
-                                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "form-label" })
-                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="mb-2">
-                                @Html.LabelFor(model => model.School, htmlAttributes: new { @class = "form-label" })
-                                @Html.EditorFor(model => model.School, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.School, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="d-grid gap-2 my-3 w-100">
-                            <button type="submit" class="btn btn-primary">Create Teacher Profile</button>
-                        </div>
-                    }
-            </div>
-            <div class="col">
-                <img src="@Url.Content("~/Content/Images/gym-slim-background-woman-sport.png")" class="img-fluid border rounded" alt="pe-teachers">
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <p class="fs-5 fw-bolder">Teacher Information</p>
+                    <div class="mb-2">
+                        @Html.LabelFor(model => model.EmployeeNumber, htmlAttributes: new { @class = "form-label" })
+                        @Html.EditorFor(model => model.EmployeeNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EmployeeNumber, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-2">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "form-label" })
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-2">
+                        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "form-label" })
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-2">
+                        @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "form-label" })
+                        @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-2">
+                        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "form-label" })
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-2">
+                        @Html.LabelFor(model => model.School, htmlAttributes: new { @class = "form-label" })
+                        @Html.EditorFor(model => model.School, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.School, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="d-grid gap-2 my-3 w-100">
+                        <button type="submit" class="btn btn-primary">Create Teacher Profile</button>
+                    </div>
+                }
             </div>
         </div>
-    </div>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
 </section>
 

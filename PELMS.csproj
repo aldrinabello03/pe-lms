@@ -158,13 +158,15 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\caucasian-woman-practicing-yoga-home.jpg" />
     <Content Include="Content\Images\full-shot-man-sitting-yoga-mat.jpg" />
-    <Content Include="Content\Images\gym-slim-background-woman-sport.png" />
     <Content Include="Content\Images\pe-logo-sample.jpg" />
     <Content Include="Content\Images\sports-teacher-with-her-students.jpg" />
+    <Content Include="Content\Images\students.jpg" />
+    <Content Include="Content\Images\teacher-create-image.jpg" />
     <Content Include="Content\Styles\custom-styles.css" />
     <Content Include="Content\Styles\login.css" />
     <Content Include="Content\Styles\SideNav.css" />
     <Content Include="Content\Styles\StudentCreate.css" />
+    <Content Include="Content\Styles\TeacherCreate.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\Site.css" />
