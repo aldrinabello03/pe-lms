@@ -1,0 +1,23 @@
+﻿p {
+    margin: 0 !important; 
+}
+
+.form-label{
+    margin: 0 !important;
+}
+
+.container-fluid{
+    padding: 0 !important;
+}
+
+.center-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-size{
+    font-size: .75rem;
+    margin: 0;
+}
