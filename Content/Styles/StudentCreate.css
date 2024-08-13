@@ -1,11 +1,11 @@
 ﻿.student-img-bg{
     height: auto;
     width: 70dvw;
-    background: url('../Images/students.jpg') no-repeat center center;
+    background: url('../Images/student-create-image.jpg') no-repeat center center;
     background-size: cover;
     z-index: -1;
 }
 
 .card-size-student{
-    width: 20dvw;
+    width: 30dvw;
 }

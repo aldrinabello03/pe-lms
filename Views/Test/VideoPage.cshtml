@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = ViewData["Title"] ?? "Dynamic Video Page";
+    var videoPath = ViewData["VideoPath"] as string;
+    var description = ViewData["Description"] as string;
+    var details = ViewData["Details"] as string;
+}
+<main class="container d-flex justify-content-center align-items-center flex-column">
+    <section class="d-flex p-2 align-items-center justify-content-between w-100 mb-3">
+        <div class="d-flex align-items-center">
+            @Html.Partial("_NavToggle")
+            <span class="fs-4">@ViewBag.Title - Test Video Process</span>
+        </div>
+    </section>
+
+
+    <div>
+        <h2 class="mb-3">@ViewData["Title"]</h2>
+        <div class="card mb-3">
+            <div class="card-body">
+                <p>@details</p>
+            </div>
+        </div>
+        <div class="card mb-3" style="width: 50%;">
+            <video class="card-img-top bordered" controls autoplay loop>
+                <source src="@videoPath" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <p>@description</p>
+            </div>
+        </div>
+        <button class="btn btn-primary mb-3" onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["NextPage"] })'">
+            Go to next exercise
+        </button>
+    </div>
+</main>
