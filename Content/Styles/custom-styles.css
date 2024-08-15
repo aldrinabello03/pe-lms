@@ -1,4 +1,11 @@
-﻿p {
+﻿:root{
+    --primary-color: #0019e6;
+    --secondary-color: #c80000 ;
+    --text-color: #ffffff;
+    --background-color: #272727;
+}
+
+p {
     margin: 0 !important; 
 }
 
@@ -20,4 +27,29 @@
 .footer-size{
     font-size: .75rem;
     margin: 0;
+}
+
+
+/* general color classes */
+.bg-b {
+    background-color: var(--primary-color); /* Replace with your desired color */
+    color: var(--text-color); /* Ensures the text is readable */
+}
+.bg-b:hover {
+    background-color: var(--primary-color); /* Optional: Darker shade on hover */
+}
+
+.c-blue {
+    color: var(--primary-color) !important;
+}
+.bg-white{
+    background-color: var(--text-color) !important;
+}
+.c-white {
+    color: var(--text-color) !important;
+}
+
+.backgradient{
+    background: var(--primary-color);
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--text-color) 100%);
 }
