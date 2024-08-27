@@ -1,15 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
-using System.Web.UI;
-using System.IO;
-using System.Web.Hosting;
-using Newtonsoft.Json.Linq;
-
 
 namespace PELMS.Controllers
 {
@@ -22,7 +14,7 @@ namespace PELMS.Controllers
             if (string.IsNullOrEmpty(page))
             {
                 // Redirect to the default video page
-                return RedirectToAction("VideoPage", new { page = "video1" });
+                return RedirectToAction("VideoPage", new { page = "Balance" });
             }
 
             // Load the JSON file content
@@ -44,19 +36,47 @@ namespace PELMS.Controllers
             // Set local video paths based on the 'page' parameter
             string videoPath = Url.Content($"~/Content/Videos/{page}.mp4");
 
-            // Determine the next page using if-else statements
+            // Determine the next and previous pages using a switch statement
             string nextPage;
-            if (page == "video1")
+            string previousPage;
+            switch (page)
             {
-                nextPage = "video2";
-            }
-            else if (page == "video2")
-            {
-                nextPage = "video3";
-            }
-            else
-            {
-                nextPage = "video1"; // Default to video1
+                case "Balance":
+                    nextPage = "Cardio Vascular Endurance";
+                    previousPage = "Test for Speed"; // Loop back to the last video
+                    break;
+                case "Cardio Vascular Endurance":
+                    nextPage = "Coordination";
+                    previousPage = "Balance";
+                    break;
+                case "Coordination":
+                    nextPage = "Flexibility";
+                    previousPage = "Cardio Vascular Endurance";
+                    break;
+                case "Flexibility":
+                    nextPage = "Power";
+                    previousPage = "Coordination";
+                    break;
+                case "Power":
+                    nextPage = "Reaction Time";
+                    previousPage = "Flexibility";
+                    break;
+                case "Reaction Time":
+                    nextPage = "Strength";
+                    previousPage = "Power";
+                    break;
+                case "Strength":
+                    nextPage = "Test for Speed";
+                    previousPage = "Reaction Time";
+                    break;
+                case "Test for Speed":
+                    nextPage = "Balance"; // Loop back to the first video
+                    previousPage = "Strength";
+                    break;
+                default:
+                    nextPage = "Balance"; // Default to Balance
+                    previousPage = "Test for Speed"; // Loop back to the last video
+                    break;
             }
 
             // Pass data to the view
@@ -64,6 +84,7 @@ namespace PELMS.Controllers
             ViewData["VideoPath"] = videoPath;
             ViewData["Description"] = description;
             ViewData["NextPage"] = nextPage;
+            ViewData["PreviousPage"] = previousPage;
             ViewData["Details"] = details;
 
             return View("VideoPage"); // Specify the view name if necessary

@@ -53,3 +53,11 @@ p {
     background: var(--primary-color);
     background: linear-gradient(180deg, var(--primary-color) 0%, var(--text-color) 100%);
 }
+
+.bg-image {
+    background-image: url('../Images/tests-bg.png');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: .25;
+}
