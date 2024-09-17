@@ -1,14 +1,16 @@
 ﻿@{
     ViewData["Title"] = ViewData["Title"] ?? "Dynamic Video Page";
     var videoPath = ViewData["VideoPath"] as string;
-    var description = ViewData["Description"] as string;
-    var details = ViewData["Details"] as string;
+    var purpose = ViewData["Purpose"] as string;
+    var equipment = ViewData["Equipment"] as string;
+    var procedureTester = ViewData["ProcedureTester"] as string;
+    var procedurePartner = ViewData["ProcedurePartner"] as string;
 }
 <main class="container d-flex justify-content-center align-items-center flex-column bg-image">
     <section class="d-flex p-2 align-items-center justify-content-between w-100 mb-3 border-bottom">
         <div class="d-flex align-items-center">
             @Html.Partial("_NavToggle")
-            <span class="fs-4">@ViewBag.Title - Test Video Process</span>
+            <span class="fs-4">@ViewBag.Title - Exercise</span>
         </div>
         <div class="d-flex align-items-center">
             @Html.ActionLink("Save and Exit", "Index", "Home", null, new { @class = "btn btn-outline-secondary" })
@@ -23,32 +25,43 @@
                 <label for="VideoScore" class="px-3 mb-0">/10</label>
             </div>
         </div>
+        <hr />
         <div class="card mb-3">
             <video src="@videoPath" class="card-img-top" controls autoplay loop></video>
         </div>
         <hr />
-        <div class="card mb-3"
-             style="
-                border: 1px solid rgba(0, 25, 230, 0.4);
-                -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
-                -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
-                box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);
-             ">
-            <div class="card-body d-flex">
-                <div class="vr"></div>
-                <p class="px-4">@details</p>
+        <div class="row gx-2">
+            <div class="col">
+                <div class="card mb-3"
+                     style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                    <div class="card-body">
+                        <h5 class="card-title">Purpose</h5>
+                        <p class="card-text">@purpose</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3"
+                     style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                    <div class="card-body">
+                        <h5 class="card-title">Equipment</h5>
+                        <p class="card-text">@equipment</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card mb-3"
-             style="
-                border: 1px solid rgba(0, 25, 230, 0.4);
-                -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
-                -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
-                box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);
-             ">
-            <div class="card-body d-flex">
-                <div class="vr"></div>
-                <p class="px-4">@description</p>
+             style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+            <div class="card-body">
+                <h5 class="card-title">Procedure (Tester)</h5>
+                <p class="card-text">@Html.Raw(procedureTester)</p>
+            </div>
+        </div>
+        <div class="card mb-3"
+             style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+            <div class="card-body">
+                <h5 class="card-title">Procedure (Partner)</h5>
+                <p class="card-text">@Html.Raw(procedurePartner)</p>
             </div>
         </div>
         <div class="d-flex w-100 justify-content-between">
