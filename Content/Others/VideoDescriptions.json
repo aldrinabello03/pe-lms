@@ -1,42 +1,167 @@
 {
-  "Balance": {
-    "title": "Balance",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This full-body strength workout is designed to build overall muscle tone and improve endurance. The routine includes a mix of compound movements such as squats, lunges, push-ups, and deadlifts, which engage multiple muscle groups simultaneously. The workout begins with a dynamic warm-up to prepare your muscles and joints for the exercises ahead. Each exercise is performed with a focus on proper form and controlled movements, ensuring that you maximize the effectiveness of each rep while minimizing the risk of injury.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]Throughout the session, the intensity gradually increases, challenging your muscles and cardiovascular system. Modifications are provided for different fitness levels, allowing you to tailor the workout to your own capabilities. The instructor emphasizes the importance of maintaining a steady pace and breathing rhythm, which are key to sustaining energy throughout the workout. By the end of this session, you'll have worked your entire body, boosting both strength and endurance."
-  },
-  "Cardio Vascular Endurance": {
-    "title": "Cardio Vascular Endurance",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This High-Intensity Interval Training (HIIT) workout is designed to burn calories and improve cardiovascular fitness in a short amount of time. The session alternates between bursts of high-intensity exercises like jumping jacks, burpees, and mountain climbers, and short periods of active recovery. This approach keeps your heart rate elevated and maximizes calorie burn, making it an efficient workout for those with a busy schedule. The workout kicks off with a quick warm-up to get your blood flowing and muscles ready for action.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]Each high-intensity interval is followed by a brief rest period, giving you just enough time to catch your breath before moving on to the next exercise. The instructor encourages you to push your limits during the intense phases, but also reminds you to listen to your body and modify exercises as needed. By the end of the workout, you'll have completed a challenging session that not only boosts your cardiovascular health but also helps improve agility, speed, and overall stamina."
-  },
-  "Coordination": {
-    "title": "Coordination",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This core strength and stability workout focuses on building a strong foundation for your entire body. The exercises in this routine target the muscles in your abdomen, lower back, and hips, which are essential for maintaining proper posture and balance. The session begins with a series of gentle stretches to warm up your core muscles and improve flexibility. You'll then move on to a variety of exercises, such as planks, leg raises, and Russian twists, each designed to engage and strengthen your core.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]As you progress through the workout, you'll notice the emphasis on controlled movements and proper form, which are crucial for effectively targeting the core muscles. The instructor provides cues to help you maintain alignment and avoid straining your lower back. This workout is suitable for all fitness levels, with modifications available for beginners and more advanced variations for those looking to challenge themselves further. By the end of the session, you'll feel a noticeable improvement in your core strength and stability, which will benefit your overall fitness and daily activities."
-  },
-  "Flexibility": {
-    "title": "Flexibility",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This High-Intensity Interval Training (HIIT) workout is designed to burn calories and improve cardiovascular fitness in a short amount of time. The session alternates between bursts of high-intensity exercises like jumping jacks, burpees, and mountain climbers, and short periods of active recovery. This approach keeps your heart rate elevated and maximizes calorie burn, making it an efficient workout for those with a busy schedule. The workout kicks off with a quick warm-up to get your blood flowing and muscles ready for action.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]Each high-intensity interval is followed by a brief rest period, giving you just enough time to catch your breath before moving on to the next exercise. The instructor encourages you to push your limits during the intense phases, but also reminds you to listen to your body and modify exercises as needed. By the end of the workout, you'll have completed a challenging session that not only boosts your cardiovascular health but also helps improve agility, speed, and overall stamina."
-  },
-  "Power": {
-    "title": "Power",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This core strength and stability workout focuses on building a strong foundation for your entire body. The exercises in this routine target the muscles in your abdomen, lower back, and hips, which are essential for maintaining proper posture and balance. The session begins with a series of gentle stretches to warm up your core muscles and improve flexibility. You'll then move on to a variety of exercises, such as planks, leg raises, and Russian twists, each designed to engage and strengthen your core.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]As you progress through the workout, you'll notice the emphasis on controlled movements and proper form, which are crucial for effectively targeting the core muscles. The instructor provides cues to help you maintain alignment and avoid straining your lower back. This workout is suitable for all fitness levels, with modifications available for beginners and more advanced variations for those looking to challenge themselves further. By the end of the session, you'll feel a noticeable improvement in your core strength and stability, which will benefit your overall fitness and daily activities."
-  },
-  "Reaction Time": {
-    "title": "Reaction Time",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This High-Intensity Interval Training (HIIT) workout is designed to burn calories and improve cardiovascular fitness in a short amount of time. The session alternates between bursts of high-intensity exercises like jumping jacks, burpees, and mountain climbers, and short periods of active recovery. This approach keeps your heart rate elevated and maximizes calorie burn, making it an efficient workout for those with a busy schedule. The workout kicks off with a quick warm-up to get your blood flowing and muscles ready for action.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]Each high-intensity interval is followed by a brief rest period, giving you just enough time to catch your breath before moving on to the next exercise. The instructor encourages you to push your limits during the intense phases, but also reminds you to listen to your body and modify exercises as needed. By the end of the workout, you'll have completed a challenging session that not only boosts your cardiovascular health but also helps improve agility, speed, and overall stamina."
-  },
-  "Strength": {
-    "title": "Strength",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This core strength and stability workout focuses on building a strong foundation for your entire body. The exercises in this routine target the muscles in your abdomen, lower back, and hips, which are essential for maintaining proper posture and balance. The session begins with a series of gentle stretches to warm up your core muscles and improve flexibility. You'll then move on to a variety of exercises, such as planks, leg raises, and Russian twists, each designed to engage and strengthen your core.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]As you progress through the workout, you'll notice the emphasis on controlled movements and proper form, which are crucial for effectively targeting the core muscles. The instructor provides cues to help you maintain alignment and avoid straining your lower back. This workout is suitable for all fitness levels, with modifications available for beginners and more advanced variations for those looking to challenge themselves further. By the end of the session, you'll feel a noticeable improvement in your core strength and stability, which will benefit your overall fitness and daily activities."
-  },
-  "Test for Speed": {
-    "title": "Test for Speed",
-    "description": "[THIS IS ONLY A PLACEHOLDER TEXTS]This High-Intensity Interval Training (HIIT) workout is designed to burn calories and improve cardiovascular fitness in a short amount of time. The session alternates between bursts of high-intensity exercises like jumping jacks, burpees, and mountain climbers, and short periods of active recovery. This approach keeps your heart rate elevated and maximizes calorie burn, making it an efficient workout for those with a busy schedule. The workout kicks off with a quick warm-up to get your blood flowing and muscles ready for action.",
-    "details": "[THIS IS ONLY A PLACEHOLDER TEXTS]Each high-intensity interval is followed by a brief rest period, giving you just enough time to catch your breath before moving on to the next exercise. The instructor encourages you to push your limits during the intense phases, but also reminds you to listen to your body and modify exercises as needed. By the end of the workout, you'll have completed a challenging session that not only boosts your cardiovascular health but also helps improve agility, speed, and overall stamina."
-  }
+	"Balance": {
+		"title": "Stork Balance Stand Test",
+		"Purpose": "to assess one's ability to maintain equilibrium.",
+		"Equipment": [
+			"1. flat, non-slip surface",
+			"2. stopwatch"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Remove the shoes and place hands on the hips.",
+				"b. Position the right foot on the side of the knee of the left foot.",
+				"c. Raise the left heel to balance on the ball of the foot.",
+				"d. Do the same procedure with the opposite foot."
+			],
+			"For the Partner": [
+				"a. Start the time as the heel of the performer is raised off the floor.",
+				"b. Stop the time if any of the following occurs:",
+				"the hand(s) come off the hips \nthe supporting foot swivels or moves (hops) in any direction \nthe non-supporting foot loses contact with the knee. \nthe heel of the supporting foot touches the floor.",
+				"b. There shall be three (3) trials."
+			]
+		},
+	},
+	"Cardio Vascular Endurance": {
+		"title": "3-Minute Step Test",
+		"Purpose": "to measure cardiovascular endurance",
+		"Equipment": [
+			"Step \n Height of Step \n Elementary - 8 inches \n Secondary - 12 inches",
+			"Stopwatch",
+			"Drum, clapper, clicker, metronome with speaker or any similar device",
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Stand at least one foot away from the step or bench with trunk erect and eyes looking straight ahead.",
+				"b. The first step of the sequence should be alternate. At the signal 'Go,' step up and down the step/bench for 3 minutes at a rate of 96 beats per minute. One step consists of 4 beats - up with the left foot (ct. 1), up with the right foot (ct. 2), down with the left foot (ct. 3), down with the right foot (ct. 4) for the first sequence. Then up with the right foot (ct. 1), up with the left foot (ct. 2), down with the right foot (ct. 3), down with the left foot (ct. 4) for the second sequence. Observe proper breathing (inhale through the nose, exhale through the mouth).",
+				"c. Immediately after the exercise, stand and locate your pulse and in five (5) seconds, or at a signal, start to get the heart rate.",
+				"d. Don't talk while taking the pulse beat.",
+				"e. Count the pulse beat for 10 seconds and multiply it by 6."
+			],
+			"For the Partner": [
+				"a. As the student assumes the position in front of the step, signal, 'Ready' and 'Go', start the stopwatch for the 3-minute step test.",
+				"b. After the test, allow the performer to locate his/her pulse in 5 seconds.",
+				"c. Give the signal to count the pulse beat.",
+				"d. Let the performer count his/her pulse beat for 10 seconds and multiply it by 6."
+			]
+		}
+	},
+	"Coordination": {
+		"title": "Juggling",
+		"Purpose": "to measure the coordination of the eye and hand",
+		"Equipment": [
+			"1. sipa (washer weighing 4 gms. with 5 inches straw) or 20 pcs. bundled rubber bands/any similar local materials weighing 4 gms."
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Hit the sipa/rubber band/similar local material alternately with the right and left palm upward. The height of the material being tossed should be at least above the head."
+			],
+			"For the Partner": [
+				"a. Count how many times the performer has hit the material with the right and left hand.",
+				"b. Stop the test if the material drops or after two (2) minutes.",
+				"c. There shall be three (3) trials."
+			]
+		}
+},
+	"Flexibility": {
+		"title": "Zipper Test",
+		"Purpose": "to test the flexibility of the shoulder girdle.",
+		"Equipment": [
+			"Ruler"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Stand erect.",
+				"b. Raise your right arm, bend your elbow, and reach down across your back as far as possible, to test the right shoulder; extend your left arm down and behind your back, bend your elbow up across your back, and try to reach/cross your fingers over those of your right hand as if to pull a zipper or scratch between the shoulder blades.",
+				"c. To test the left shoulder, repeat procedures a and b with the left hand over the left shoulder."
+			],
+			"For the Partner": [
+				"a. Observe whether the fingers touched or overlapped each other, if not, measure the gap between the middle fingers of both hands.",
+				"b. Record the distance in centimeter."
+			]
+		}
+	},
+	"Power": {
+		"title": "Standing Long Jump",
+		"Purpose": "to measure the explosive strength and power of the leg muscles.",
+		"Equipment": [
+			"1. tape measure/meter stick/any measuring device."
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Stand behind the take-off line with feet parallel to each other, the tips of the shoes should not go beyond the line.",
+				"b. Bend knees and swing arms backward once, then swing arms forward as you jump landing on both feet. Try to jump as far as you can.",
+				"c. Do not control the momentum of the jump (continuously move forward).",
+				"d. Must land on both feet.",
+				"e. Perform the test twice in succession."
+			],
+			"For the Partner": [
+				"a. Place zero (0) point of the tape measure at the take-off line.",
+				"b. After the jump, spot the mark where the back of the heel of either foot of the tester has landed nearest to the take-off line.",
+				"c. Record the distance of the two trials."
+			]
+		}
+	},
+	"Reaction Time": {
+		"title": "Stick Drop Test",
+		"Purpose": "to measure the time to respond to a stimulus.",
+		"Equipment": [
+			"1. 12-inch ruler or stick",
+			"2. Arm chair or table and chair"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Sit on an armchair or chair next to the table so that the elbow and the lower arm rests on the desk/table comfortably.",
+				"b. Place the heel of the hand on the desk/table so that only the fingers and thumb extend beyond. Fingers and thumb should at least be one (1) inch apart.",
+				"c. Catch the ruler/stick with the thumb and index finger without lifting the elbow from the desk/table as the partner drops the stick. Hold the stick while the partner reads the measurement.",
+				"d. Do this thrice."
+			],
+			"For the Partner": [
+				"a. Hold the ruler or stick at the top, allowing it to dangle between the thumb and fingers of the performer.",
+				"b. Hold the ruler/stick so that the 12-inch mark is even between the thumb and the index finger. No part of the hand of the performer should touch the ruler/stick.",
+				"c. Drop the ruler/stick without warning and let the tester catch it with his/her thumb and index finger.",
+				"d. Record the score on the upper part of the thumb."
+			]
+		}
+	},
+	"Strength": {
+		"title": "Push-up",
+		"Purpose": "to measure strength of upper extremities",
+		"Equipment": [
+			"exercise mats or any clean mat"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Lie down on the mat; face down in standard push-up position: palms on the mat about shoulder width, fingers pointing forward, and legs straight, parallel, and slightly apart, with the toes supporting the feet.",
+				"b. FOR BOYS: Straighten the arms, keeping the back and knees straight, then lower the arms until there is a 90-degree angle at the elbows (upper arms are parallel to the floor). FOR GIRLS: With knees in contact with the floor, straighten the arms, keeping the back straight, then lower the arms until there is a 90-degree angle at the elbows (upper arms are parallel to the floor).",
+				"c. Perform as many repetitions as possible, maintaining a cadence of 20 push-ups per minute. (2 seconds going down and 1 second going up).",
+				"d. A maximum of 50 push-ups for boys and 25 push-ups for girls."
+			],
+			"For the Partner": [
+				"a. As the tester assumes the position of push-up, start counting as the tester lowers his/her body until he/she reaches a 90-degree angle at the elbow. The partner should stand in front of the tester and his/her eyes should be close to elbow level to accurately judge the 90-degree bend.",
+				"b. Make sure that the performer executes the push-ups in the correct form.",
+				"c. The test is terminated when the performer can no longer execute the push-ups in the correct form, is in pain, voluntarily stops, or cadence is broken."
+			]
+		}
+	},
+	"Test for Speed": {
+		"title": "40-Meter Sprint",
+		"Purpose": "to measure running speed",
+		"Equipment": [
+			"1. Stopwatch",
+			"2. Running area with known measurement (40 meters)"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. At the signal 'Ready', stand behind the take-off line, the tips of the shoes should not go beyond the line and assume a crouch position.",
+				"b. At the signal 'Get Set', assume an un-crouch position (buttocks up) with both hands on the starting line.",
+				"c. At the signal 'GO', run to the finish line as fast as you can."
+			],
+			"For the Partner": [
+				"a. Set the stopwatch to zero (0) point.",
+				"b. At the signal 'GO', start the watch and stop it as the performer crosses the finish line.",
+				"c. Record the time in the nearest 0:00:01 seconds."
+			]
+		}
+	},
+	"Body Composition": {}
 }

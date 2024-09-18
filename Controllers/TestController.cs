@@ -29,9 +29,12 @@ namespace PELMS.Controllers
                 return HttpNotFound(); // Page not found
             }
 
-            string title = videoInfo["title"].ToString();
-            string description = videoInfo["description"].ToString();
-            string details = videoInfo["details"].ToString();
+            // Extract information from JSON
+            string title = videoInfo["title"]?.ToString();
+            string purpose = videoInfo["Purpose"]?.ToString();
+            string equipment = string.Join(", ", videoInfo["Equipment"]?.ToObject<string[]>());
+            string procedureTester = string.Join("<br/>", videoInfo["Procedure"]?["For the Tester"]?.ToObject<string[]>());
+            string procedurePartner = string.Join("<br/>", videoInfo["Procedure"]?["For the Partner"]?.ToObject<string[]>());
 
             // Set local video paths based on the 'page' parameter
             string videoPath = Url.Content($"~/Content/Videos/{page}.mp4");
@@ -82,10 +85,12 @@ namespace PELMS.Controllers
             // Pass data to the view
             ViewData["Title"] = title;
             ViewData["VideoPath"] = videoPath;
-            ViewData["Description"] = description;
+            ViewData["Purpose"] = purpose;
+            ViewData["Equipment"] = equipment;
+            ViewData["ProcedureTester"] = procedureTester;
+            ViewData["ProcedurePartner"] = procedurePartner;
             ViewData["NextPage"] = nextPage;
             ViewData["PreviousPage"] = previousPage;
-            ViewData["Details"] = details;
 
             return View("VideoPage"); // Specify the view name if necessary
         }

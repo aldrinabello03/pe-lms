@@ -55,9 +55,9 @@ p {
 }
 
 .bg-image {
-    background-image: url('../Images/tests-bg.png');
+    /*background-image: url('../Images/tests-bg.png');*/
     width: 100%;
     background-size: cover;
     background-position: center;
-    opacity: .25;
+    /*opacity: .25;*/
 }

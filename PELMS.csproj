@@ -170,6 +170,7 @@
     <Content Include="Content\Styles\StudentCreate.css" />
     <Content Include="Content\Styles\TeacherCreate.css" />
     <Content Include="Content\Videos\Balance.mp4" />
+    <Content Include="Content\Videos\Body Composition.mp4" />
     <Content Include="Content\Videos\Cardio Vascular Endurance.mp4" />
     <Content Include="Content\Videos\Coordination.mp4" />
     <Content Include="Content\Videos\Flexibility.mp4" />
