@@ -6,8 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using PELMS.DAL;
 using PELMS.Models;
+using PELMS.Models.ViewModels;
 
 namespace PELMS.Controllers
 {
@@ -63,19 +65,46 @@ namespace PELMS.Controllers
         }
 
         // GET: StudentProfile/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {
-            if (id == null)
+            var user = (UserSessionViewModel)Session["UserLogged"];
+
+            if (user == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentProfile studentProfile = db.StudentProfiles.Find(id);
-            if (studentProfile == null)
+
+            using (var dbCon = new LMSDBContext())
             {
-                return HttpNotFound();
-            }
-            ViewBag.UserAccountId = new SelectList(db.UserAccounts, "Id", "UserName", studentProfile.UserAccountId);
-            return View(studentProfile);
+                var studentProfile = db.StudentProfiles
+                    .Include(x => x.UserAccount)
+                    .Where(x => x.UserAccountId == user.Id).FirstOrDefault();
+
+                var profileViewModel = new StudentProfileViewModel();
+
+                if (studentProfile != null)
+                {
+                    profileViewModel = new StudentProfileViewModel
+                    {
+                        Id = studentProfile.Id,
+                        FirstName = studentProfile.FirstName,
+                        LastName = studentProfile.LastName,
+                        MiddleName = studentProfile.MiddleName,
+                        School = studentProfile.School,
+                        StudentNumber = studentProfile.StudentNumber,
+                        BodyType = studentProfile.BodyType,
+                        Weight = studentProfile.Weight,
+                        Height = studentProfile.Height,
+                        TeacherName = studentProfile.TeacherName,
+                        Gender = studentProfile.Gender,
+                        Section = studentProfile.Section,
+                        Age = studentProfile.Age,
+                        Level = studentProfile.Level
+                    };
+                }
+                
+                return View(profileViewModel);
+            }            
         }
 
         // POST: StudentProfile/Edit/5

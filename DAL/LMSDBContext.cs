@@ -17,6 +17,7 @@ namespace PELMS.DAL
         public DbSet<UserAccount> UserAccounts { get; set; }
         public DbSet<StudentProfile> StudentProfiles { get; set; }
         public DbSet<TeacherProfile> TeacherProfiles { get; set; }
+        public DbSet<StudentScore> StudentScores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

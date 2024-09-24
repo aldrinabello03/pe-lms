@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PELMS.DAL;
 using PELMS.Models;
+using PELMS.Models.ViewModels;
 
 namespace PELMS.Controllers
 {
@@ -63,19 +64,39 @@ namespace PELMS.Controllers
         }
 
         // GET: TeacherProfile/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {
-            if (id == null)
+
+            var user = (UserSessionViewModel)Session["UserLogged"];
+
+            if (user == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TeacherProfile teacherProfile = db.TeacherProfiles.Find(id);
-            if (teacherProfile == null)
+
+            using (var dbCon = new LMSDBContext())
             {
-                return HttpNotFound();
+                var studentProfile = db.TeacherProfiles
+                    .Include(x => x.UserAccount)
+                    .Where(x => x.UserAccountId == user.Id).FirstOrDefault();
+
+                var profileViewModel = new TeacherProfileViewModel();
+
+                if (studentProfile != null)
+                {
+                    profileViewModel = new TeacherProfileViewModel
+                    {
+                        Id = studentProfile.Id,
+                        FirstName = studentProfile.FirstName,
+                        LastName = studentProfile.LastName,
+                        MiddleName = studentProfile.MiddleName,
+                        School = studentProfile.School,
+                        EmployeeNumber = studentProfile.EmployeeNumber
+                    };
+                }
+
+                return View(profileViewModel);
             }
-            ViewBag.UserAccountId = new SelectList(db.UserAccounts, "Id", "UserName", teacherProfile.UserAccountId);
-            return View(teacherProfile);
         }
 
         // POST: TeacherProfile/Edit/5

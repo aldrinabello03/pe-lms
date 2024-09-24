@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PELMS.DAL;
 using PELMS.Models;
+using PELMS.Models.ViewModels;
 
 namespace PELMS.Controllers
 {
@@ -47,16 +48,23 @@ namespace PELMS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Password,Role")] UserAccount userAccount)
+        public ActionResult Create(RegsitrationViewModel register)
         {
             if (ModelState.IsValid)
             {
+                var userAccount = new UserAccount
+                {
+                    UserName = register.UserName,
+                    Password = register.Password,
+                    Role = register.Role
+                };
+
                 db.UserAccounts.Add(userAccount);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
-            return View(userAccount);
+            return View(register);
         }
 
         // GET: UserAccounts/Edit/5
@@ -125,9 +133,67 @@ namespace PELMS.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult  Login()
+        public ActionResult Login()
         {
-            return View();
+            var userLogged = (UserSessionViewModel)Session["UserLogged"];
+            if (userLogged == null)
+            {
+                return View();
+            }
+            else
+            {
+                if (userLogged.Role == "Student")
+                {
+                    return Redirect("~/StudentProfile/Create");
+                }
+                else if (userLogged.Role == "Teacher")
+                {
+                    return Redirect("~/TeacherProfile/Create");
+                }
+                else
+                {
+                    return Redirect("~/Home/About");
+                }
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginViewModel login)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                using (var dbCon = new LMSDBContext())
+                {
+                    var user = dbCon.UserAccounts
+                        .Where(x => x.UserName == login.UserName && x.Password == login.Password)
+                        .FirstOrDefault();
+
+                    if (user == null)
+                    {
+                        Session["UserLogged"] = null;
+                        Session["UserLoggedName"] = "";
+                        return RedirectToAction("Login");
+                    }
+                    else
+                    {
+                        var userSession = new UserSessionViewModel
+                        {
+                            Id = user.Id,
+                            UserName = user.UserName,
+                            Name = user.UserName,
+                            Role = user.Role,
+                        };
+
+                        Session["UserLogged"] = userSession;
+                        Session["UserLoggedName"] = userSession.Name;
+                        return Redirect("~/Home/Index");
+                    }
+                }
+            }
+
+            return View(login);
         }
     }
 }

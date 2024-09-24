@@ -1,44 +1,71 @@
+@{
+    var userName = Session["UserLoggedName"] != null ? Session["UserLoggedName"].ToString() : "";
+    var user = (PELMS.Models.ViewModels.UserSessionViewModel)Session["UserLogged"];
+}
+
 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white">
     <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center pb-2 mb-md-0 me-md-auto text-decoration-none w-100">
         <img src="@Url.Content("~/Content/Images/pe-logo-sample.jpg")" alt="PE LMS" class="img-fluid rounded w-100">
     </a>
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+        @if (user == null)
+        {
+            <li class="nav-item w-100">
+                @Html.ActionLink("LOGIN", "Login", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+            </li>
+            <li class="nav-item w-100">
+                @Html.ActionLink("REGISTER", "Create", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+            </li>
+        }
+
         <li class="nav-item w-100">
-            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+            @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
         </li>
         <li class="nav-item w-100">
-            @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+            @Html.ActionLink("ABOUT", "About", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
         </li>
         <li class="nav-item w-100">
-            @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+            @Html.ActionLink("CONTACT US", "Contact", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
         </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Login", "Login", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Register", "Create", "UserAccount", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Student Accounts", "Index", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Teacher Accounts", "Index", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Student Profile", "Create", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Teacher Profile", "Create", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
-        <li class="nav-item w-100">
-            @Html.ActionLink("Video Layout Sample", "VideoPage", "Test", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
+
+        @if (user != null)
+        {
+            if (user.Role == "Student")
+            {
+                <li class="nav-item w-100">
+                    @Html.ActionLink("PROFILE", "Edit", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
+                <li class="nav-item w-100">
+                    @Html.ActionLink("FITNESS TEST", "VideoPage", "Test", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
+            }
+            else if (user.Role == "Teacher")
+            {
+                <li class="nav-item w-100">
+                    @Html.ActionLink("PROFILE", "Edit", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
+            }
+            else
+            {
+                <li class="nav-item w-100">
+                    @Html.ActionLink("STUDENT ACCOUNTS", "Index", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
+                <li class="nav-item w-100">
+                    @Html.ActionLink("TEACHER ACCOUNTS", "Index", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
+            }
+        }
+
     </ul>
 </div>
 <div class="px-3 pb-4 w-100">
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
         <li class="nav-item w-100">
-            @Html.ActionLink("Username", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+            @if (!string.IsNullOrEmpty(userName))
+            {
+                @Html.ActionLink(userName, "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+            }
         </li>
         <li class="nav-item w-100 mt-3 text-white">
             @Html.Partial("_Footer")

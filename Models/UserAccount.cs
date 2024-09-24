@@ -50,4 +50,14 @@ namespace PELMS.Models
         public virtual UserAccount UserAccount { get; set; }
     }
 
+    public class SupportProfile
+    {
+        [Key]
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int UserAccountId { get; set; }
+        public virtual UserAccount UserAccount { get; set; }
+    }
+
 }
