@@ -1,0 +1,33 @@
+﻿body {
+    background-color: #f8f9fa; /* Light gray background for a clean look */
+}
+
+.about-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 15px;
+    -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
+    -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
+    box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);
+}
+
+/*h1.display-4 {
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;*/ /* Darker text for headings */
+/*}
+
+p, ul {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}*/
+
+.list-group-item {
+    background-color: #e9ecef;
+    border-color: #dedede;
+}
