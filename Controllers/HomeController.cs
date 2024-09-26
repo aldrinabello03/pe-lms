@@ -26,5 +26,10 @@ namespace PELMS.Controllers
 
             return View();
         }
+
+        public ActionResult DataPrivacyConsent()
+        {
+            return View();
+        }
     }
 }

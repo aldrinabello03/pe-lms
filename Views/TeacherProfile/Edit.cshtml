@@ -29,8 +29,8 @@
                         @*@Html.LabelFor(model => model.School, htmlAttributes: new { @class = "form-label" })*@
                         @Html.DropDownListFor(model => model.School,
                               new List<SelectListItem> {
-                                   new SelectListItem { Value = "Select" , Text = "<--Select School-->" },
-                                   new SelectListItem { Value = "University of Makati" , Text = "University of Makati" }
+                                   new SelectListItem { Value = "SELECT" , Text = "<--SELECT SCHOOL-->" },
+                                   new SelectListItem { Value = "UNIVERSITY OF MAKATI" , Text = "UNIVERSITY OF MAKATI" }
                                 }, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.School, "", new { @class = "text-danger" })
                     </div>
@@ -43,9 +43,9 @@
                         @*@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "form-label" })*@
                         @Html.DropDownListFor(model => model.Title,
                               new List<SelectListItem> {
-                                   new SelectListItem { Value = "Select" , Text = "<--Select Title-->" },
-                                   new SelectListItem { Value = "Mr." , Text = "Mr." },
-                                   new SelectListItem { Value = "Ms." , Text = "Ms." }
+                                   new SelectListItem { Value = "SELECT" , Text = "<--SELECT TITLE-->" },
+                                   new SelectListItem { Value = "MR." , Text = "MR." },
+                                   new SelectListItem { Value = "MS." , Text = "MS." }
                                 }, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>

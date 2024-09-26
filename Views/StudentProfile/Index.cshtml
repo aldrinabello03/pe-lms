@@ -1,19 +1,13 @@
-﻿@model IEnumerable<PELMS.Models.StudentProfile>
+﻿@model IEnumerable<PELMS.Models.ViewModels.StudentProfileViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Students List";
 }
 
-<h2>Index</h2>
+<h2>Students List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserAccount.UserName)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.StudentNumber)
         </th>
@@ -21,10 +15,10 @@
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.MiddleName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MiddleName)
+            @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Age)
@@ -33,25 +27,10 @@
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TeacherName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.School)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Level)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Section)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Weight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Height)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BodyType)
         </th>
         <th></th>
     </tr>
@@ -59,19 +38,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserAccount.UserName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.StudentNumber)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastName)
+            @Html.DisplayFor(modelItem => item.MiddleName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MiddleName)
+            @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Age)
@@ -80,30 +56,13 @@
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TeacherName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.School)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Level)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Section)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Height)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BodyType)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("View Score Card", "ScoreCard", new { id = item.Id })
         </td>
     </tr>
 }

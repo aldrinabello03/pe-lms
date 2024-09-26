@@ -39,11 +39,17 @@
                 <li class="nav-item w-100">
                     @Html.ActionLink("FITNESS TEST", "VideoPage", "Test", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
                 </li>
+                <li class="nav-item w-100">
+                    @Html.ActionLink("MY SCORE CARD", "ScoreCard", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
             }
             else if (user.Role == "Teacher")
             {
                 <li class="nav-item w-100">
                     @Html.ActionLink("PROFILE", "Edit", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                </li>
+                <li class="nav-item w-100">
+                    @Html.ActionLink("MY STUDENTS", "Index", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
                 </li>
             }
             else
@@ -64,7 +70,7 @@
         <li class="nav-item w-100">
             @if (!string.IsNullOrEmpty(userName))
             {
-                @Html.ActionLink(userName, "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+                @Html.ActionLink(userName, "ScoreCard", "StudentProfile", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
             }
         </li>
         <li class="nav-item w-100 mt-3 text-white">

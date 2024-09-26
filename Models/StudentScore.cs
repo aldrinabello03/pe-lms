@@ -10,9 +10,8 @@ namespace PELMS.Models
     {
         [Key]
         public int Id { get; set; }
-        public int TestId { get; set; }
-        public int Score { get; set; }
-        public int Total { get; set; }
+        public string TestTitle { get; set; }
+        public double Score { get; set; }
         public string Interpretation { get; set; }
         public int UserAccountId { get; set; }
         public virtual UserAccount UserAccount { get; set; }

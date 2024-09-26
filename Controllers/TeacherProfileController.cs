@@ -76,22 +76,23 @@ namespace PELMS.Controllers
 
             using (var dbCon = new LMSDBContext())
             {
-                var studentProfile = db.TeacherProfiles
+                var teacherProfile = db.TeacherProfiles
                     .Include(x => x.UserAccount)
                     .Where(x => x.UserAccountId == user.Id).FirstOrDefault();
 
                 var profileViewModel = new TeacherProfileViewModel();
 
-                if (studentProfile != null)
+                if (teacherProfile != null)
                 {
                     profileViewModel = new TeacherProfileViewModel
                     {
-                        Id = studentProfile.Id,
-                        FirstName = studentProfile.FirstName,
-                        LastName = studentProfile.LastName,
-                        MiddleName = studentProfile.MiddleName,
-                        School = studentProfile.School,
-                        EmployeeNumber = studentProfile.EmployeeNumber
+                        Id = teacherProfile.Id,
+                        FirstName = teacherProfile.FirstName,
+                        LastName = teacherProfile.LastName,
+                        MiddleName = teacherProfile.MiddleName,
+                        School = teacherProfile.School,
+                        EmployeeNumber = teacherProfile.EmployeeNumber,
+                        Title = teacherProfile.Title,
                     };
                 }
 

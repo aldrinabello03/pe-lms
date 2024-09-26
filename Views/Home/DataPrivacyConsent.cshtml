@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Data Privacy Consent";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+
+    <p>
+        Data Privacy Confirmation:
+
+        By using the LMS-Online Physical Fitness Test, I hereby confirm that I have carefully read, fully understand, and unconditionally agree to the collection, utilization, and processing of my personal data in strict accordance with the rightful owner's Privacy Policy.
+
+        I am well aware that the personal information I have provided will be exclusively employed for the purpose of account establishment, as well as for any relevant processing activities associated with my usage of the system. Moreover, I trust that the system's rightful owner will undertake all necessary measures to safeguard my data in full compliance with the applicable data protection laws.
+
+        I also explicitly acknowledge my inherent right to access, rectify, or request the deletion of my personal information at any time, as and when I deem it necessary.
+
+        By clicking the "AGREE" button, I am voluntarily providing my consent to the processing of my data as described above and in accordance with the owner's Privacy Policy.
+    </p>
+</main>
+
+<div class="d-flex w-100 justify-content-between">
+    <button class="btn btn-outline-primary bg-b mb-3" type="button"
+            onclick="location.href='@Url.Action("Proceed", "UserAccount")'">
+        AGREE
+    </button>
+    <button class="btn btn-outline-primary bg-b mb-3" type="button"
+            onclick="location.href='@Url.Action("Exit", "UserAccount")'">
+        EXIT
+    </button>
+</div>

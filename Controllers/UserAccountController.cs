@@ -144,11 +144,11 @@ namespace PELMS.Controllers
             {
                 if (userLogged.Role == "Student")
                 {
-                    return Redirect("~/StudentProfile/Create");
+                    return Redirect("~/StudentProfile/ScoreCard");
                 }
                 else if (userLogged.Role == "Teacher")
                 {
-                    return Redirect("~/TeacherProfile/Create");
+                    return Redirect("~/StudentProfile/Index");
                 }
                 else
                 {
@@ -174,26 +174,106 @@ namespace PELMS.Controllers
                     {
                         Session["UserLogged"] = null;
                         Session["UserLoggedName"] = "";
+                        Session["Agreed"] = false;
+
                         return RedirectToAction("Login");
                     }
                     else
                     {
+                        string name = user.UserName;
+                        int age = 0;
+                        int profileId = 0;
+
+                        if (user.Role == "Student")
+                        {
+                            var studentProfile = dbCon.StudentProfiles.Where(x => x.UserAccountId == user.Id).FirstOrDefault();
+                            if (studentProfile != null)
+                            {
+                                age = studentProfile.Age;
+                                name = studentProfile.FirstName + " " + studentProfile.LastName;
+                                profileId = studentProfile.Id;
+                            }
+                        }
+                        else if (user.Role == "Teacher")
+                        {
+                            var teaherProfile = dbCon.TeacherProfiles.Where(x => x.UserAccountId == user.Id).FirstOrDefault();
+                            if (teaherProfile != null)
+                            {
+                                name = teaherProfile.FirstName + " " + teaherProfile.LastName;
+                                profileId = teaherProfile.Id;
+                            }
+                        }
+
                         var userSession = new UserSessionViewModel
                         {
                             Id = user.Id,
                             UserName = user.UserName,
-                            Name = user.UserName,
+                            Name = name,
                             Role = user.Role,
+                            Age = age,
+                            ProfileId = profileId,
                         };
 
                         Session["UserLogged"] = userSession;
                         Session["UserLoggedName"] = userSession.Name;
-                        return Redirect("~/Home/Index");
+                        Session["Agreed"] = false;
+
+                        //return Redirect("~/Home/DataPrivacyConsent");
+
+                        if (userSession.Name == userSession.UserName)
+                        {
+                            if (userSession.Role == "Student")
+                                return Redirect("~/StudentProfile/Edit");
+                            else if (userSession.Role == "Teacher")
+                                return Redirect("~/TeacherProfile/Edit");
+                        }
+                        else
+                        {
+                            if (userSession.Role == "Student")
+                                return Redirect("~/StudentProfile/ScoreCard");
+                            else if (userSession.Role == "Teacher")
+                                return Redirect("~/StudentProfile/Index");
+                        }
                     }
                 }
             }
 
             return View(login);
+        }
+
+        [HttpPost]
+        public ActionResult Proceed()
+        {
+            var userSession = (UserSessionViewModel)Session["UserLogged"];
+            var name = Session["UserLoggedName"].ToString();
+            var agreed = (bool)Session["Agreed"];
+
+            if (userSession.Name == userSession.UserName)
+            {
+                if (userSession.Role == "Student")
+                    return Redirect("~/StudentProfile/Edit");
+                else if (userSession.Role == "Teacher")
+                    return Redirect("~/TeacherProfile/Edit");
+            }
+            else
+            {
+                if (userSession.Role == "Student")
+                    return Redirect("~/StudentProfile/ScoreCard");
+                else if (userSession.Role == "Teacher")
+                    return Redirect("~/StudentProfile/Index");
+            }
+
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public ActionResult Exit()
+        {
+            Session["UserLogged"] = null;
+            Session["UserLoggedName"] = "";
+            Session["Agreed"] = false;
+
+            return RedirectToAction("Login");
         }
     }
 }

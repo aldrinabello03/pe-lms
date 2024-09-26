@@ -20,8 +20,39 @@ namespace PELMS.Controllers
         // GET: StudentProfile
         public ActionResult Index()
         {
-            var studentProfiles = db.StudentProfiles.Include(s => s.UserAccount);
-            return View(studentProfiles.ToList());
+            using (var dbCon = new LMSDBContext())
+            {
+                var userSession = (UserSessionViewModel)Session["UserLogged"];
+                var list = new List<StudentProfileViewModel>();
+
+                if (userSession.Role == "Teacher")
+                {
+                    var studentProfiles = dbCon.StudentProfiles
+                        .Include(s => s.UserAccount)
+                        .Where(x => x.TeacherName == userSession.Name)
+                        .ToList();
+
+                    list = (from studentProfile in studentProfiles
+                            select new StudentProfileViewModel()
+                            {
+                                Id = studentProfile.Id,
+                                UserAccountId = studentProfile.UserAccountId,
+                                FirstName = studentProfile.FirstName,
+                                LastName = studentProfile.LastName,
+                                MiddleName = studentProfile.MiddleName,
+                                Age = studentProfile.Age,
+                                Gender = studentProfile.Gender,
+                                School = studentProfile.School,
+                                TeacherName = studentProfile.TeacherName,
+                                Level = studentProfile.Level,
+                                StudentNumber = studentProfile.StudentNumber,
+                                Section = studentProfile.Section,
+                            }).ToList();
+                }
+                
+                return View(list);
+            }
+                
         }
 
         // GET: StudentProfile/Details/5
@@ -157,6 +188,11 @@ namespace PELMS.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult ScoreCard()
+        {
+            return View();
         }
     }
 }
