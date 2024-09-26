@@ -1,7 +1,15 @@
 {
+	"Body Composition": {
+		"title": "Body Mass Index",
+		"Purpose": "see the body's relative amount of fat to fat-free mass",
+		"Formula": "BMI = Weight (kg) / [Height (m)]^2",
+		"Weight": "the heaviness or lightness of a person",
+		"Equipment": [ "Weighing or Bathroom scale calibrated properly" ]
+	},
 	"Balance": {
 		"title": "Stork Balance Stand Test",
 		"Purpose": "to assess one's ability to maintain equilibrium.",
+		"Formula": "",
 		"Equipment": [
 			"1. flat, non-slip surface",
 			"2. stopwatch"
@@ -15,19 +23,20 @@
 			],
 			"For the Partner": [
 				"a. Start the time as the heel of the performer is raised off the floor.",
-				"b. Stop the time if any of the following occurs:",
-				"the hand(s) come off the hips \nthe supporting foot swivels or moves (hops) in any direction \nthe non-supporting foot loses contact with the knee. \nthe heel of the supporting foot touches the floor.",
-				"b. There shall be three (3) trials."
+				"b. Stop the time if any of the following occurs: the hand(s) come off the hips, the supporting foot swivels or moves (hops) in any direction, the non-supporting foot loses contact with the knee, the heel of the supporting foot touches the floor.",
+				"c. There shall be three (3) trials."
 			]
 		},
+		"Scoring": "Record the time taken on both feet in nearest seconds and divide the score to two (2) to get the average percentage score."
 	},
 	"Cardio Vascular Endurance": {
 		"title": "3-Minute Step Test",
 		"Purpose": "to measure cardiovascular endurance",
+		"Formula": "Pulse Rate = (Beats per 10 seconds) x 6",
 		"Equipment": [
-			"Step \n Height of Step \n Elementary - 8 inches \n Secondary - 12 inches",
+			"Step Height of Step Elementary - 8 inches Secondary - 12 inches",
 			"Stopwatch",
-			"Drum, clapper, clicker, metronome with speaker or any similar device",
+			"Drum, clapper, clicker, metronome with speaker or any similar device"
 		],
 		"Procedure": {
 			"For the Tester": [
@@ -43,11 +52,13 @@
 				"c. Give the signal to count the pulse beat.",
 				"d. Let the performer count his/her pulse beat for 10 seconds and multiply it by 6."
 			]
-		}
+		},
+		"Scoring": "Record the 60-second heart rate after the activity."
 	},
 	"Coordination": {
 		"title": "Juggling",
 		"Purpose": "to measure the coordination of the eye and hand",
+		"Formula": "",
 		"Equipment": [
 			"1. sipa (washer weighing 4 gms. with 5 inches straw) or 20 pcs. bundled rubber bands/any similar local materials weighing 4 gms."
 		],
@@ -60,11 +71,13 @@
 				"b. Stop the test if the material drops or after two (2) minutes.",
 				"c. There shall be three (3) trials."
 			]
-		}
-},
-	"Flexibility": {
+		},
+		"Scoring": "Record the highest number of hits the performer has done."
+	},
+	"Flexibility1": {
 		"title": "Zipper Test",
 		"Purpose": "to test the flexibility of the shoulder girdle.",
+		"Formula": "",
 		"Equipment": [
 			"Ruler"
 		],
@@ -76,13 +89,37 @@
 			],
 			"For the Partner": [
 				"a. Observe whether the fingers touched or overlapped each other, if not, measure the gap between the middle fingers of both hands.",
-				"b. Record the distance in centimeter."
+				"b. Record the distance in centimeters."
 			]
-		}
+		},
+		"Scoring": "Record zipper test to the nearest 0.1 centimeter."
+	},
+	"Flexibility2": {
+		"title": "Sit and Reach",
+		"Purpose": "to test the flexibility of the lower extremities (particularly the trunk).",
+		"Formula": "",
+		"Equipment": [
+			"Tape measure or meter stick"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. Sit on the floor with back, head and shoulders flat on the wall. Feet are 12 inches apart. b. Interlock thumbs and position the tip of the fingers on the floor without bending the elbows.",
+				"b. Interlock thumbs and position the tip of the fingers on the floor without bending the elbows.",
+				"c. After the partner has positioned the zero point of the tape measure/meter stick, (at the top of the middle fingers), the tester starts the test by sliding the hands slowly forward without jerking, trying to reach the farthest distance possible without bending the knees.",
+				"d. Bouncing or jerking movement is not allowed.",
+				"e. Do it twice."
+			],
+			"For the Partner": [
+				"a. As the tester assumes the (b) procedure, position the zero point of the tape measure at the tip of the middle fingers of the tester.",
+				"b. See to it that the knees are not bent as the performer slides the farthest distance that he could. Record the farthest distance reached in centimeters."
+			]
+		},
+		"Scoring": " record the farthest distance between the two trials to the nearest 0.1 centimeters"
 	},
 	"Power": {
 		"title": "Standing Long Jump",
 		"Purpose": "to measure the explosive strength and power of the leg muscles.",
+		"Formula": "",
 		"Equipment": [
 			"1. tape measure/meter stick/any measuring device."
 		],
@@ -99,11 +136,13 @@
 				"b. After the jump, spot the mark where the back of the heel of either foot of the tester has landed nearest to the take-off line.",
 				"c. Record the distance of the two trials."
 			]
-		}
+		},
+		"Scoring": "Record the best distance in meters to the nearest 0.1 centimeters."
 	},
 	"Reaction Time": {
 		"title": "Stick Drop Test",
 		"Purpose": "to measure the time to respond to a stimulus.",
+		"Formula": "",
 		"Equipment": [
 			"1. 12-inch ruler or stick",
 			"2. Arm chair or table and chair"
@@ -118,50 +157,57 @@
 			"For the Partner": [
 				"a. Hold the ruler or stick at the top, allowing it to dangle between the thumb and fingers of the performer.",
 				"b. Hold the ruler/stick so that the 12-inch mark is even between the thumb and the index finger. No part of the hand of the performer should touch the ruler/stick.",
-				"c. Drop the ruler/stick without warning and let the tester catch it with his/her thumb and index finger.",
-				"d. Record the score on the upper part of the thumb."
+				"c. Drop the ruler/stick without warning and let the performer catch it with the thumb and index finger.",
+				"d. Measure the distance from the bottom of the stick to the top of the performer’s hand where the stick is caught.",
+				"e. Record the reading."
 			]
-		}
+		},
+		"Scoring": "Record the reading of the three tests."
 	},
-	"Strength": {
-		"title": "Push-up",
+	"Strength1": {
+		"title": "Push up",
 		"Purpose": "to measure strength of upper extremities",
+		"Formula": "",
 		"Equipment": [
 			"exercise mats or any clean mat"
 		],
 		"Procedure": {
 			"For the Tester": [
 				"a. Lie down on the mat; face down in standard push-up position: palms on the mat about shoulder width, fingers pointing forward, and legs straight, parallel, and slightly apart, with the toes supporting the feet.",
-				"b. FOR BOYS: Straighten the arms, keeping the back and knees straight, then lower the arms until there is a 90-degree angle at the elbows (upper arms are parallel to the floor). FOR GIRLS: With knees in contact with the floor, straighten the arms, keeping the back straight, then lower the arms until there is a 90-degree angle at the elbows (upper arms are parallel to the floor).",
-				"c. Perform as many repetitions as possible, maintaining a cadence of 20 push-ups per minute. (2 seconds going down and 1 second going up).",
+				"b. FOR BOYS: Straighten the arms, keeping the back and knees straight, then lower the arms until there is a 90-degree angle at the elbows (upper arms are parallel to the floor). FOR GIRLS: With knees in contact with the floor, straightens the arms, keeping the back straight, then lowers the arms until there is a 90-degree angle at the elbows (upper arms are parallel to the floor).",
+				"c. Perform as many repetitions as possible, maintaining a cadence of 20 push-ups per minute. (2 seconds going down and 1 sec going up).",
 				"d. A maximum of 50 push-ups for boys and 25 push-ups for girls."
 			],
 			"For the Partner": [
-				"a. As the tester assumes the position of push-up, start counting as the tester lowers his/her body until he/she reaches a 90-degree angle at the elbow. The partner should stand in front of the tester and his/her eyes should be close to elbow level to accurately judge the 90-degree bend.",
+				"a. As the tester assumes the position of push-up, start counting as the tester lowers his/her body until he/she reaches 90-degree angle at the elbow. The partner should stand in front of the tester and his/her eyes should be close to elbow level to accurately judge the 90 degrees bend.",
 				"b. Make sure that the performer executes the push-ups in the correct form.",
 				"c. The test is terminated when the performer can no longer execute the push-ups in the correct form, is in pain, voluntarily stops, or cadence is broken."
 			]
-		}
+		},
+		"Scoring": "record the number of push-ups made."
 	},
-	"Test for Speed": {
-		"title": "40-Meter Sprint",
-		"Purpose": "to measure running speed",
+	"Strength2": {
+		"title": "Basic Plank",
+		"Purpose": "exercise mats or any clean mat, stop watch/time piece",
+		"Formula": "",
 		"Equipment": [
-			"1. Stopwatch",
-			"2. Running area with known measurement (40 meters)"
+			"exercise mats or any clean mat"
 		],
 		"Procedure": {
 			"For the Tester": [
-				"a. At the signal 'Ready', stand behind the take-off line, the tips of the shoes should not go beyond the line and assume a crouch position.",
-				"b. At the signal 'Get Set', assume an un-crouch position (buttocks up) with both hands on the starting line.",
-				"c. At the signal 'GO', run to the finish line as fast as you can."
+				"a. Assume a push-up position. Rest body on forearms with palms and fingers flat on the floor. Elbows are aligned with the shoulders.",
+				"b. Legs are straight with ankles, knees and thighs touching together.",
+				"c. Support weight on forearms and toes; make sure that your back is flat. Head, neck and spine are in a straight line.",
+				"d. Keep abdominals engaged/contracted; do not let stomach drop or allow hips to rise."
 			],
 			"For the Partner": [
-				"a. Set the stopwatch to zero (0) point.",
-				"b. At the signal 'GO', start the watch and stop it as the performer crosses the finish line.",
-				"c. Record the time in the nearest 0:00:01 seconds."
+				"a. Ensure the availability of a mat/smooth flooring or anything that can protect the forearms.",
+				"b. Give the signal Start/Go and start/press the time piece.",
+				"c. Make sure that the back of the head, neck, spine and ankles are in a straight line.",
+				"d. Give two (2) warnings.",
+				"e. Stop the time when the performer can no longer hold the required position, or, when the performer has held the position for at least 90 seconds. Holding the plank position beyond 90 seconds is considered unnecessary."
 			]
-		}
-	},
-	"Body Composition": {}
+		},
+		"Scoring": "record the time in the nearest seconds/minute. Maximum of 90 seconds for Boys and Girls"
+	}
 }

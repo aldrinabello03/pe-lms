@@ -2,10 +2,13 @@
     ViewData["Title"] = ViewData["Title"] ?? "Dynamic Video Page";
     var videoPath = ViewData["VideoPath"] as string;
     var purpose = ViewData["Purpose"] as string;
+    var formula = ViewData["Formula"] as string;
     var equipment = ViewData["Equipment"] as string;
+    var scoring = ViewData["Scoring"] as string;
     var procedureTester = ViewData["ProcedureTester"] as string;
     var procedurePartner = ViewData["ProcedurePartner"] as string;
 }
+
 <main class="container d-flex justify-content-center align-items-center flex-column bg-image">
     <section class="d-flex p-2 align-items-center justify-content-between w-100 mb-3 border-bottom">
         <div class="d-flex align-items-center">
@@ -16,6 +19,7 @@
             @Html.ActionLink("Save and Exit", "Index", "Home", null, new { @class = "btn btn-outline-secondary" })
         </div>
     </section>
+
     <div class="container-fluid w-75">
         <div class="d-flex justify-content-between align-content-center w-100 box-styles">
             <h2 class="mb-3">@ViewData["Title"]</h2>
@@ -25,50 +29,107 @@
                 <label for="VideoScore" class="px-3 mb-0">/10</label>
             </div>
         </div>
+
         <hr />
-        <div class="card mb-3">
-            <video src="@videoPath" class="card-img-top" controls autoplay loop></video>
-        </div>
+
+        <!-- Video Section -->
+        @if (!string.IsNullOrEmpty(videoPath))
+        {
+            <div class="card mb-3">
+                <video src="@videoPath" class="card-img-top" controls autoplay loop></video>
+            </div>
+        }
+
         <hr />
+
         <div class="row gx-2">
-            <div class="col">
-                <div class="card mb-3"
-                     style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
-                    <div class="card-body">
-                        <h5 class="card-title">Purpose</h5>
-                        <p class="card-text">@purpose</p>
+            <!-- Purpose Card -->
+            @if (!string.IsNullOrEmpty(purpose))
+            {
+                <div class="col">
+                    <div class="card mb-3"
+                         style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                        <div class="card-body">
+                            <h5 class="card-title">Purpose</h5>
+                            <p class="card-text">@purpose</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card mb-3"
-                     style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
-                    <div class="card-body">
-                        <h5 class="card-title">Equipment</h5>
-                        <p class="card-text">@equipment</p>
+            }
+
+            <!-- Purpose Card -->
+            @if (!string.IsNullOrEmpty(formula))
+            {
+                <div class="col">
+                    <div class="card mb-3"
+                         style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                        <div class="card-body">
+                            <h5 class="card-title">Formula</h5>
+                            <p class="card-text">@formula</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+
+            <!-- Equipment Card -->
+            @if (!string.IsNullOrEmpty(equipment))
+            {
+                <div class="col">
+                    <div class="card mb-3"
+                         style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                        <div class="card-body">
+                            <h5 class="card-title">Equipment</h5>
+                            <p class="card-text">@equipment</p>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
-        <div class="card mb-3"
-             style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
-            <div class="card-body">
-                <h5 class="card-title">Procedure (Tester)</h5>
-                <p class="card-text">@Html.Raw(procedureTester)</p>
+
+        <!-- Procedure Tester Card -->
+        @if (!string.IsNullOrEmpty(procedureTester))
+        {
+            <div class="card mb-3"
+                 style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                <div class="card-body">
+                    <h5 class="card-title">Procedure (Tester)</h5>
+                    <p class="card-text">@Html.Raw(procedureTester)</p>
+                </div>
             </div>
-        </div>
-        <div class="card mb-3"
-             style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
-            <div class="card-body">
-                <h5 class="card-title">Procedure (Partner)</h5>
-                <p class="card-text">@Html.Raw(procedurePartner)</p>
+        }
+
+        <!-- Procedure Partner Card -->
+        @if (!string.IsNullOrEmpty(procedurePartner))
+        {
+            <div class="card mb-3"
+                 style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                <div class="card-body">
+                    <h5 class="card-title">Procedure (Partner)</h5>
+                    <p class="card-text">@Html.Raw(procedurePartner)</p>
+                </div>
             </div>
-        </div>
+        }
+
+        <!-- Scoring Card -->
+        @if (!string.IsNullOrEmpty(scoring))
+        {
+            <div class="card mb-3"
+                 style="border: 1px solid rgba(0, 25, 230, 0.4); -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33); box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);">
+                <div class="card-body">
+                    <h5 class="card-title">Scoring</h5>
+                    <p class="card-text">@Html.Raw(scoring)</p>
+                </div>
+            </div>
+        }
+
+        <!-- Navigation Buttons -->
         <div class="d-flex w-100 justify-content-between">
-            <button class="btn btn-outline-primary bg-b mb-3" type="button" onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["PreviousPage"] })'">
+            <button class="btn btn-outline-primary bg-b mb-3" type="button"
+                    onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["PreviousPage"] })'">
                 Go back to the previous video
             </button>
-            <button class="btn btn-outline-primary bg-b mb-3" type="button" onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["NextPage"] })'">
+            <button class="btn btn-outline-primary bg-b mb-3" type="button"
+                    onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["NextPage"] })'">
                 Go to next exercise
             </button>
         </div>
