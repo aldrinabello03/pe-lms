@@ -1,14 +1,14 @@
 {
 	"Body Composition": {
 		"title": "Body Mass Index",
-		"Purpose": "see the body's relative amount of fat to fat-free mass",
+		"Purpose": "See the body's relative amount of fat to fat-free mass",
 		"Formula": "BMI = Weight (kg) / [Height (m)]^2",
 		"Weight": "the heaviness or lightness of a person",
 		"Equipment": [ "Weighing or Bathroom scale calibrated properly" ]
 	},
 	"Balance": {
 		"title": "Stork Balance Stand Test",
-		"Purpose": "to assess one's ability to maintain equilibrium.",
+		"Purpose": "To assess one's ability to maintain equilibrium.",
 		"Formula": "",
 		"Equipment": [
 			"1. flat, non-slip surface",
@@ -27,11 +27,11 @@
 				"c. There shall be three (3) trials."
 			]
 		},
-		"Scoring": "Record the time taken on both feet in nearest seconds and divide the score to two (2) to get the average percentage score."
+		"Scoring": "Record the time taken on both feet in nearest seconds."
 	},
 	"Cardio Vascular Endurance": {
 		"title": "3-Minute Step Test",
-		"Purpose": "to measure cardiovascular endurance",
+		"Purpose": "To measure cardiovascular endurance",
 		"Formula": "Pulse Rate = (Beats per 10 seconds) x 6",
 		"Equipment": [
 			"Step Height of Step Elementary - 8 inches Secondary - 12 inches",
@@ -53,11 +53,11 @@
 				"d. Let the performer count his/her pulse beat for 10 seconds and multiply it by 6."
 			]
 		},
-		"Scoring": "Record the 60-second heart rate after the activity."
+		"Scoring": "Record the 60-second heart rate before and after the activity."
 	},
 	"Coordination": {
 		"title": "Juggling",
-		"Purpose": "to measure the coordination of the eye and hand",
+		"Purpose": "To measure the coordination of the eye and hand",
 		"Formula": "",
 		"Equipment": [
 			"1. sipa (washer weighing 4 gms. with 5 inches straw) or 20 pcs. bundled rubber bands/any similar local materials weighing 4 gms."
@@ -76,7 +76,7 @@
 	},
 	"Flexibility1": {
 		"title": "Zipper Test",
-		"Purpose": "to test the flexibility of the shoulder girdle.",
+		"Purpose": "To test the flexibility of the shoulder girdle.",
 		"Formula": "",
 		"Equipment": [
 			"Ruler"
@@ -96,7 +96,7 @@
 	},
 	"Flexibility2": {
 		"title": "Sit and Reach",
-		"Purpose": "to test the flexibility of the lower extremities (particularly the trunk).",
+		"Purpose": "To test the flexibility of the lower extremities (particularly the trunk).",
 		"Formula": "",
 		"Equipment": [
 			"Tape measure or meter stick"
@@ -114,11 +114,11 @@
 				"b. See to it that the knees are not bent as the performer slides the farthest distance that he could. Record the farthest distance reached in centimeters."
 			]
 		},
-		"Scoring": " record the farthest distance between the two trials to the nearest 0.1 centimeters"
+		"Scoring": "Record the distance of the two trials to the nearest 0.1 centimeters."
 	},
 	"Power": {
 		"title": "Standing Long Jump",
-		"Purpose": "to measure the explosive strength and power of the leg muscles.",
+		"Purpose": "To measure the explosive strength and power of the leg muscles.",
 		"Formula": "",
 		"Equipment": [
 			"1. tape measure/meter stick/any measuring device."
@@ -137,11 +137,11 @@
 				"c. Record the distance of the two trials."
 			]
 		},
-		"Scoring": "Record the best distance in meters to the nearest 0.1 centimeters."
+		"Scoring": "Record both distances in meters to the nearest 0.1 centimeters."
 	},
 	"Reaction Time": {
 		"title": "Stick Drop Test",
-		"Purpose": "to measure the time to respond to a stimulus.",
+		"Purpose": "To measure the time to respond to a stimulus.",
 		"Formula": "",
 		"Equipment": [
 			"1. 12-inch ruler or stick",
@@ -166,7 +166,7 @@
 	},
 	"Strength1": {
 		"title": "Push up",
-		"Purpose": "to measure strength of upper extremities",
+		"Purpose": "To measure strength of upper extremities",
 		"Formula": "",
 		"Equipment": [
 			"exercise mats or any clean mat"
@@ -184,11 +184,11 @@
 				"c. The test is terminated when the performer can no longer execute the push-ups in the correct form, is in pain, voluntarily stops, or cadence is broken."
 			]
 		},
-		"Scoring": "record the number of push-ups made."
+		"Scoring": "Record the number of push-ups made."
 	},
 	"Strength2": {
 		"title": "Basic Plank",
-		"Purpose": "exercise mats or any clean mat, stop watch/time piece",
+		"Purpose": "Exercise mats or any clean mat, stop watch/time piece",
 		"Formula": "",
 		"Equipment": [
 			"exercise mats or any clean mat"
@@ -208,7 +208,7 @@
 				"e. Stop the time when the performer can no longer hold the required position, or, when the performer has held the position for at least 90 seconds. Holding the plank position beyond 90 seconds is considered unnecessary."
 			]
 		},
-		"Scoring": "record the time in the nearest seconds/minute. Maximum of 90 seconds for Boys and Girls"
+		"Scoring": "Record the time in the nearest seconds. Maximum of 90 seconds for Boys and Girls"
 	},
 	"Test for Speed": {
 		"title": "40-Meter Sprint",
@@ -230,6 +230,6 @@
 				"c. Record time in the nearest 0:00:01 seconds"
 			]
 		},
-		"Scoring": "Record the time in nearest minutes and seconds."
+		"Scoring": "Record the time in nearest seconds."
 	}
 }
