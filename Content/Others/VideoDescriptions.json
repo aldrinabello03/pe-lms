@@ -209,5 +209,27 @@
 			]
 		},
 		"Scoring": "record the time in the nearest seconds/minute. Maximum of 90 seconds for Boys and Girls"
+	},
+	"Test for Speed": {
+		"title": "40-Meter Sprint",
+		"Purpose": "to measure running speed",
+		"Formula": "",
+		"Equipment": [
+			"1. Stopwatch.",
+			"2. Running area with known measurement (40 meters)"
+		],
+		"Procedure": {
+			"For the Tester": [
+				"a. At the signal - Ready, stand behind the take-off line, the tips of the shoes should not go beyond the line and assume a crouch position.",
+				"b. At the signal - Get Set, assume an un-crouch position (buttocks up) with both hands on the starting line.",
+				"c. At the signal - GO, run to the finish line as fast as you can."
+			],
+			"For the Partner": [
+				"a. Set the stopwatch to zero (0) point.",
+				"b. At the signal - GO start the watch and stop it as the performer crossed the finish line.",
+				"c. Record time in the nearest 0:00:01 seconds"
+			]
+		},
+		"Scoring": "Record the time in nearest minutes and seconds."
 	}
 }
