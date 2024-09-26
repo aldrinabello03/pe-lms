@@ -167,9 +167,11 @@
     <Content Include="Content\Images\student-create-image.jpg" />
     <Content Include="Content\Images\teacher-create-image.jpg" />
     <Content Include="Content\Images\tests-bg.png" />
+    <Content Include="Content\Styles\about.css" />
     <Content Include="Content\Styles\custom-styles.css" />
     <Content Include="Content\Styles\dataPrivacy.css" />
     <Content Include="Content\Styles\login.css" />
+    <Content Include="Content\Styles\ScoreCard.css" />
     <Content Include="Content\Styles\SideNav.css" />
     <Content Include="Content\Styles\StudentCreate.css" />
     <Content Include="Content\Styles\TeacherCreate.css" />

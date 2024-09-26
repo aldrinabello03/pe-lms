@@ -1,0 +1,20 @@
+﻿.sc-border-done {
+    border: 1px solid rgba(0, 25, 230, 0.4);
+    -webkit-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
+    -moz-box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.33);
+    box-shadow: 6px 0px 66px -3px rgba(0,25,230,0.05);
+}
+
+.sc-border-not-done {
+    border: 1px solid rgba(222,8,44, 0.4);
+    -webkit-box-shadow: 6px 0px 66px -3px rgba(222,8,44, 0.33);
+    -moz-box-shadow: 6px 0px 66px -3px rgba(222,8,44, 0.33);
+    box-shadow: 6px 0px 66px -3px rgba(222,8,44, 0.05);
+}
+
+.sc-border-not-started {
+    border: 1px solid rgba(242,236,26, 0.4);
+    -webkit-box-shadow: 6px 0px 66px -3px rgba(242,236,26, 0.33);
+    -moz-box-shadow: 6px 0px 66px -3px rgba(242,236,26, 0.33);
+    box-shadow: 6px 0px 66px -3px rgba(242,236,26, 0.05);
+}

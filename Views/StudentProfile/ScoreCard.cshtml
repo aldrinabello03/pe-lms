@@ -1,7 +1,7 @@
 ﻿@{
-    ViewBag.Title = "OPE";
+    ViewBag.Title = "Student Score Card";
 }
-
+@Styles.Render("~/Content/css")
 <main class="p-3">
     <section class="d-flex p-2 align-items-center justify-content-between w-100">
         <div class="d-flex align-items-center">
@@ -9,101 +9,43 @@
             <span class="fs-4">PHYSICAL FITNESS TEST SCORE CARD</span>
         </div>
     </section>
+    <hr />
     <img src="" alt="">
     <section class="container-fluid">
-        <div class="card my-2 teacher-list">
-            <div class="card-body">
-                <span class="fs-4">Active Teacher List</span>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Teacher Number</th>
-                            <th>Name</th>
-                            <th>School</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="row">
+            <div class="col">
+                <div class="card sc-border-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Push up</p>
+                        <p style="font-size: 1rem;">Strength Test</p>
+                    </div>
+                    <div class="card-body p-lg-3">
+                        <p>Number of Push up made: <strong>12</strong></p>
+                        <p>Interpretation: <strong>Need more protien</strong></p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="card my-2 teacher-list">
-            <div class="card-body">
-                <span class="fs-4">Active Student List</span>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Teacher Number</th>
-                            <th>Name</th>
-                            <th>School</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col">
+                <div class="card sc-border-not-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Basic Plank</p>
+                        <p style="font-size: 1rem;">Strength Test</p>
+                    </div>
+                    <div class="card-body text-center p-lg-3">
+                        <p><em>Not Yet Finished.</em></p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="card my-2 teacher-list">
-            <div class="card-body">
-                <span class="fs-4">Pending Account Approval</span>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Teacher Number</th>
-                            <th>Name</th>
-                            <th>School</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>John Doe</td>
-                            <td>STI</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col">
+                <div class="card sc-border-not-started">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Standing Long Jump</p>
+                        <p style="font-size: 1rem;">Power Test</p>
+                    </div>
+                    <div class="card-body text-center p-lg-3">
+                        <p><em>Not Yet Started.</em></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

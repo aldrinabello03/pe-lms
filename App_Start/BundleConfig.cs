@@ -29,7 +29,9 @@ namespace PELMS
                       "~/Content/Styles/login.css",
                       "~/Content/Styles/TeacherCreate.css",
                       "~/Content/Styles/StudentCreate.css",
-                      "~/Content/Styles/dataPrivacy.css"));
+                      "~/Content/Styles/dataPrivacy.css",
+                      "~/Content/Styles/ScoreCard.css",
+                      "~/Content/Styles/about.css"));
 
             bundles.Add(new StyleBundle("~/lib/fontawesome").Include(
                       "~/lib/font-awesome/css/all.css"
