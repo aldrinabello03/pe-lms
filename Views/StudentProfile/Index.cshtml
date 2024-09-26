@@ -62,7 +62,7 @@
             @Html.DisplayFor(modelItem => item.Section)
         </td>
         <td>
-            @Html.ActionLink("View Score Card", "ScoreCard", new { id = item.Id })
+            @Html.ActionLink("View Score Card", "ScoreCard", new { id = item.UserAccountId })
         </td>
     </tr>
 }

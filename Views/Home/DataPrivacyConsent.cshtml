@@ -27,14 +27,23 @@
                 </p>
                 <hr />
                 <div class="d-flex w-100 justify-content-evenly">
-                    <button class="btn btn-success px-3" type="button"
-                            onclick="location.href='@Url.Action("Proceed", "UserAccount")'">
-                        AGREE
-                    </button>
-                    <button class="btn btn-outline-primary px-3" type="button"
-                            onclick="location.href='@Url.Action("Exit", "UserAccount")'">
-                        EXIT
-                    </button>
+
+                    @using (Html.BeginForm("Proceed", "UserAccount", FormMethod.Post, new { id = "preceedForm" }))
+                    {
+                        <button class="btn btn-success px-3" type="submit">
+                            AGREE
+                        </button>
+                    }
+                    @using (Html.BeginForm("Exit", "UserAccount", FormMethod.Post, new { id = "exitForm" }))
+                    {
+                        <button class="btn btn-outline-primary px-3" type="submit">
+                            EXIT
+                        </button>
+                    }
+
+
+
+                    
                 </div>
             </div>
         </div>

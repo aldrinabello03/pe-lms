@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PELMS.Models.ViewModels.StudentScoreDashBoardViewModel
+
+@{
     ViewBag.Title = "Student Score Card";
 }
 @Styles.Render("~/Content/css")
@@ -6,7 +8,7 @@
     <section class="d-flex p-2 align-items-center justify-content-between w-100">
         <div class="d-flex align-items-center">
             @Html.Partial("_NavToggle")
-            <span class="fs-4">PHYSICAL FITNESS TEST SCORE CARD</span>
+            <span class="fs-4">FITNESS DASHBOARD - @Model.StudentName</span>
         </div>
     </section>
     <hr />
@@ -16,36 +18,253 @@
             <div class="col">
                 <div class="card sc-border-done">
                     <div class="card-header">
-                        <p style="font-size: 1.8rem; font-weight: bold;">Push up</p>
-                        <p style="font-size: 1rem;">Strength Test</p>
+                        <p style="font-size: 1.8rem; font-weight: bold;">Body Mass Index (BMI)</p>
+                        <p style="font-size: 1rem;">Body Composition</p>
                     </div>
-                    <div class="card-body p-lg-3">
-                        <p>Number of Push up made: <strong>12</strong></p>
-                        <p>Interpretation: <strong>Need more protien</strong></p>
-                    </div>
+                    @if (!string.IsNullOrEmpty(Model.BMIInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Weight (kg): <strong>@Model.Weight</strong></p>
+                            <p>Height (m): <strong>@Model.Height</strong></p>
+                            <p>Classification: <strong>@Model.BMIInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
                 </div>
             </div>
             <div class="col">
                 <div class="card sc-border-not-done">
                     <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">3-minute Step</p>
+                        <p style="font-size: 1rem;">Cardiovascular Endurance</p>
+                    </div>
+                    @if (Model.BeforeHearthRate != null)
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Before the Activity: <strong>@Model.BeforeHearthRate</strong></p>
+                            <p>After the Activity: <strong>@Model.AfterHearthRate</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col">
+                <div class="card sc-border-not-started">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Push Up</p>
+                        <p style="font-size: 1rem;">Strength</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.PushUpInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Number of Push up made: <strong>@Model.NumberOfPushUps</strong></p>
+                            <p>Interpretation: <strong>@Model.PushUpInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <div class="card sc-border-done">
+                    <div class="card-header">
                         <p style="font-size: 1.8rem; font-weight: bold;">Basic Plank</p>
-                        <p style="font-size: 1rem;">Strength Test</p>
+                        <p style="font-size: 1rem;">Strength</p>
                     </div>
-                    <div class="card-body text-center p-lg-3">
-                        <p><em>Not Yet Finished.</em></p>
+                    @if (!string.IsNullOrEmpty(Model.PlankInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Time: <strong>@Model.PlankTime</strong></p>
+                            <p>Interpretation: <strong>@Model.PlankInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col">
+                <div class="card sc-border-not-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Zipper Test</p>
+                        <p style="font-size: 1rem;">Flexibility</p>
                     </div>
+                    @if (!string.IsNullOrEmpty(Model.ZipperInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Right: <strong>@Model.RightZipper</strong></p>
+                            <p>Left: <strong>@Model.LeftZipper</strong></p>
+                            <p>Interpretation: <strong>@Model.ZipperInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col">
+                <div class="card sc-border-not-started">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Sit and Reach</p>
+                        <p style="font-size: 1rem;">Flexibility</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.SitAndReachInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>First Try: <strong>@Model.SitAndReachFirstTry</strong></p>
+                            <p>Second try: <strong>@Model.SitAndReachSecondTry</strong></p>
+                            <p>Best Score: <strong>@Model.SitAndReachBestScore</strong></p>
+                            <p>Interpretation: <strong>@Model.SitAndReachInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <div class="card sc-border-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Juggling</p>
+                        <p style="font-size: 1rem;">Coordination</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.JugglingInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Score: <strong>@Model.JugglingHits</strong></p>
+                            <p>Interpretation: <strong>@Model.JugglingInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col">
+                <div class="card sc-border-not-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">40-meter Sprint</p>
+                        <p style="font-size: 1rem;">Speed</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.SprintInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Time: <strong>@Model.SprintTime</strong></p>
+                            <p>Interpretation: <strong>@Model.SprintInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
                 </div>
             </div>
             <div class="col">
                 <div class="card sc-border-not-started">
                     <div class="card-header">
                         <p style="font-size: 1.8rem; font-weight: bold;">Standing Long Jump</p>
-                        <p style="font-size: 1rem;">Power Test</p>
+                        <p style="font-size: 1rem;">Power</p>
                     </div>
-                    <div class="card-body text-center p-lg-3">
-                        <p><em>Not Yet Started.</em></p>
-                    </div>
+                    @if (!string.IsNullOrEmpty(Model.LongJumpInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>First Try: <strong>@Model.LongJumpFirstTry</strong></p>
+                            <p>Second try: <strong>@Model.LongJumpSecondTry</strong></p>
+                            <p>Interpretation: <strong>@Model.LongJumpInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
                 </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <div class="card sc-border-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Stork Balance Stand Test</p>
+                        <p style="font-size: 1rem;">Balance</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.BalanceInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>Right Foot Time: <strong>@Model.BalanceRight</strong></p>
+                            <p>Left Foot Time: <strong>@Model.BalanceLeft</strong></p>
+                            <p>Interpretation: <strong>@Model.BalanceInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col">
+                <div class="card sc-border-not-done">
+                    <div class="card-header">
+                        <p style="font-size: 1.8rem; font-weight: bold;">Stick Drop Test</p>
+                        <p style="font-size: 1rem;">Reaction Time</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.StickDropInterpretation))
+                    {
+                        <div class="card-body p-lg-3">
+                            <p>First Try: <strong>@Model.StickDrop1</strong></p>
+                            <p>Second Try: <strong>@Model.StickDrop2</strong></p>
+                            <p>Third Try: <strong>@Model.StickDrop3</strong></p>
+                            <p>Interpretation: <strong>@Model.StickDropInterpretation</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center p-lg-3">
+                            <p><em>Not Yet Finished.</em></p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col">
+                
             </div>
         </div>
     </section>

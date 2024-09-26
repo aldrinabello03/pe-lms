@@ -190,9 +190,207 @@ namespace PELMS.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult ScoreCard()
+        public ActionResult ScoreCard(int? id)
         {
-            return View();
+            using (var dbCon = new LMSDBContext())
+            {
+                if (id == null || id == 0)
+                {
+                    var user = (UserSessionViewModel)Session["UserLogged"];
+                    var student = dbCon.UserAccounts.Include(x => x.Scores).Include(x => x.StudentProfile).Where(x => x.Id == user.Id).FirstOrDefault();
+                    var vm = new StudentScoreDashBoardViewModel();
+                    if (student != null)
+                    {
+
+                        vm.StudentName = user.Name;
+
+                        if (student.StudentProfile.Any(x => !string.IsNullOrEmpty(x.BodyType)))
+                        {
+                            vm.Height = student.StudentProfile.FirstOrDefault().Height;
+                            vm.Weight = student.StudentProfile.FirstOrDefault().Weight;
+                            vm.BMIInterpretation = student.StudentProfile.FirstOrDefault().BodyType;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Stork Balance Stand Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Stork Balance Stand Test").FirstOrDefault();
+                            vm.BalanceLeft = score.BalanceLeft;
+                            vm.BalanceRight = score.BalanceRight;
+                            vm.BalanceInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "3-Minute Step Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "3-Minute Step Test").FirstOrDefault();
+                            vm.BeforeHearthRate = score.BeforeHearthRate;
+                            vm.AfterHearthRate = score.AfterHearthRate;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Juggling"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Juggling").FirstOrDefault();
+                            vm.JugglingHits = score.JugglingHits;
+                            vm.JugglingInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Zipper Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Zipper Test").FirstOrDefault();
+                            vm.RightZipper = score.RightZipper;
+                            vm.LeftZipper = score.LeftZipper;
+                            vm.ZipperInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Sit and Reach"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Sit and Reach").FirstOrDefault();
+                            vm.SitAndReachFirstTry = score.SitAndReachFirstTry;
+                            vm.SitAndReachSecondTry = score.SitAndReachSecondTry;
+                            vm.SitAndReachBestScore = score.SitAndReachFirstTry >= score.SitAndReachSecondTry ? score.SitAndReachFirstTry : score.SitAndReachSecondTry;
+                            vm.SitAndReachInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Standing Long Jump"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Standing Long Jump").FirstOrDefault();
+                            vm.LongJumpFirstTry = score.LongJumpFirstTry;
+                            vm.LongJumpSecondTry = score.LongJumpSecondTry;
+                            vm.LongJumpInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Stick Drop Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Stick Drop Test").FirstOrDefault();
+                            vm.StickDrop1 = score.StickDrop1;
+                            vm.StickDrop2 = score.StickDrop2;
+                            vm.StickDrop3 = score.StickDrop3;
+                            vm.StickDropInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Push up"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Push up").FirstOrDefault();
+                            vm.NumberOfPushUps = score.NumberOfPushUps;
+                            vm.PushUpInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Basic Plank"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Basic Plank").FirstOrDefault();
+                            vm.PlankTime = score.PlankTime;
+                            vm.PlankInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "40-Meter Sprint"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "40-Meter Sprint").FirstOrDefault();
+                            vm.SprintTime = score.SprintTime;
+                            vm.SprintInterpretation = score.Interpretation;
+                        }
+
+                    }
+
+                    return View(vm);
+                }
+                else
+                {
+
+                    var student = dbCon.UserAccounts.Include(x => x.Scores).Include(x => x.StudentProfile).Where(x => x.Id == id).FirstOrDefault();
+                    var vm = new StudentScoreDashBoardViewModel();
+
+                    if (student != null)
+                    {
+                        vm.StudentName = student.StudentProfile.FirstOrDefault().FirstName + " " + student.StudentProfile.FirstOrDefault().FirstName;
+
+                        if (student.StudentProfile.Any(x => !string.IsNullOrEmpty(x.BodyType)))
+                        {
+                            vm.Height = student.StudentProfile.FirstOrDefault().Height;
+                            vm.Weight = student.StudentProfile.FirstOrDefault().Weight;
+                            vm.BMIInterpretation = student.StudentProfile.FirstOrDefault().BodyType;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Stork Balance Stand Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Stork Balance Stand Test").FirstOrDefault();
+                            vm.BalanceLeft = score.BalanceLeft;
+                            vm.BalanceRight = score.BalanceRight;
+                            vm.BalanceInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "3-Minute Step Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "3-Minute Step Test").FirstOrDefault();
+                            vm.BeforeHearthRate = score.BeforeHearthRate;
+                            vm.AfterHearthRate = score.AfterHearthRate;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Juggling"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Juggling").FirstOrDefault();
+                            vm.JugglingHits = score.JugglingHits;
+                            vm.JugglingInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Zipper Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Zipper Test").FirstOrDefault();
+                            vm.RightZipper = score.RightZipper;
+                            vm.LeftZipper = score.LeftZipper;
+                            vm.ZipperInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Sit and Reach"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Sit and Reach").FirstOrDefault();
+                            vm.SitAndReachFirstTry = score.SitAndReachFirstTry;
+                            vm.SitAndReachSecondTry = score.SitAndReachSecondTry;
+                            vm.SitAndReachBestScore = score.SitAndReachFirstTry >= score.SitAndReachSecondTry ? score.SitAndReachFirstTry : score.SitAndReachSecondTry;
+                            vm.SitAndReachInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Standing Long Jump"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Standing Long Jump").FirstOrDefault();
+                            vm.LongJumpFirstTry = score.LongJumpFirstTry;
+                            vm.LongJumpSecondTry = score.LongJumpSecondTry;
+                            vm.LongJumpInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Stick Drop Test"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Stick Drop Test").FirstOrDefault();
+                            vm.StickDrop1 = score.StickDrop1;
+                            vm.StickDrop2 = score.StickDrop2;
+                            vm.StickDrop3 = score.StickDrop3;
+                            vm.StickDropInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Push up"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Push up").FirstOrDefault();
+                            vm.NumberOfPushUps = score.NumberOfPushUps;
+                            vm.PushUpInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "Basic Plank"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "Basic Plank").FirstOrDefault();
+                            vm.PlankTime = score.PlankTime;
+                            vm.PlankInterpretation = score.Interpretation;
+                        }
+
+                        if (student.Scores.Any(x => x.TestTitle == "40-Meter Sprint"))
+                        {
+                            var score = student.Scores.Where(x => x.TestTitle == "40-Meter Sprint").FirstOrDefault();
+                            vm.SprintTime = score.SprintTime;
+                            vm.SprintInterpretation = score.Interpretation;
+                        }
+
+                    }
+
+                    return View(vm);
+                }
+            }
         }
     }
 }

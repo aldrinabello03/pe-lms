@@ -13,7 +13,9 @@ namespace PELMS.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
-        public virtual ICollection<StudentScore> Users { get; set; }
+        public virtual ICollection<StudentScore> Scores { get; set; }
+        public virtual ICollection<StudentProfile> StudentProfile { get; set; }
+        public virtual ICollection<TeacherProfile> TeacherProfile { get; set; }
     }
 
     public class StudentProfile

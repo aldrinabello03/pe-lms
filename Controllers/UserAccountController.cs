@@ -183,6 +183,7 @@ namespace PELMS.Controllers
                         string name = user.UserName;
                         int age = 0;
                         int profileId = 0;
+                        string gender = "";
 
                         if (user.Role == "Student")
                         {
@@ -192,6 +193,7 @@ namespace PELMS.Controllers
                                 age = studentProfile.Age;
                                 name = studentProfile.FirstName + " " + studentProfile.LastName;
                                 profileId = studentProfile.Id;
+                                gender = studentProfile.Gender;
                             }
                         }
                         else if (user.Role == "Teacher")
@@ -212,28 +214,29 @@ namespace PELMS.Controllers
                             Role = user.Role,
                             Age = age,
                             ProfileId = profileId,
+                            Gender = gender,
                         };
 
                         Session["UserLogged"] = userSession;
                         Session["UserLoggedName"] = userSession.Name;
                         Session["Agreed"] = false;
 
-                        //return Redirect("~/Home/DataPrivacyConsent");
+                        return Redirect("~/Home/DataPrivacyConsent");
 
-                        if (userSession.Name == userSession.UserName)
-                        {
-                            if (userSession.Role == "Student")
-                                return Redirect("~/StudentProfile/Edit");
-                            else if (userSession.Role == "Teacher")
-                                return Redirect("~/TeacherProfile/Edit");
-                        }
-                        else
-                        {
-                            if (userSession.Role == "Student")
-                                return Redirect("~/StudentProfile/ScoreCard");
-                            else if (userSession.Role == "Teacher")
-                                return Redirect("~/StudentProfile/Index");
-                        }
+                        //if (userSession.Name == userSession.UserName)
+                        //{
+                        //    if (userSession.Role == "Student")
+                        //        return Redirect("~/StudentProfile/Edit");
+                        //    else if (userSession.Role == "Teacher")
+                        //        return Redirect("~/TeacherProfile/Edit");
+                        //}
+                        //else
+                        //{
+                        //    if (userSession.Role == "Student")
+                        //        return Redirect("~/StudentProfile/ScoreCard");
+                        //    else if (userSession.Role == "Teacher")
+                        //        return Redirect("~/StudentProfile/Index");
+                        //}
                     }
                 }
             }

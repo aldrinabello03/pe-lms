@@ -17,5 +17,11 @@ namespace PELMS
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            // Set the session timeout to 60 minutes
+            Session.Timeout = 60;
+        }
     }
 }

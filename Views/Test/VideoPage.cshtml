@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PELMS.Models.ViewModels.StudentScoreViewModel
+
+@{
     ViewData["Title"] = ViewData["Title"] ?? "Dynamic Video Page";
     var videoPath = ViewData["VideoPath"] as string;
     var purpose = ViewData["Purpose"] as string;
@@ -13,23 +15,11 @@
     <section class="d-flex p-2 align-items-center justify-content-between w-100 mb-3 border-bottom">
         <div class="d-flex align-items-center">
             @Html.Partial("_NavToggle")
-            <span class="fs-4">@ViewBag.Title - Exercise</span>
-        </div>
-        <div class="d-flex align-items-center">
-            @Html.ActionLink("Save and Exit", "Index", "Home", null, new { @class = "btn btn-outline-secondary" })
+            <span class="fs-4">@ViewBag.Title</span>
         </div>
     </section>
 
     <div class="container-fluid w-75">
-        <div class="d-flex justify-content-between align-content-center w-100 box-styles">
-            <h2 class="mb-3">@ViewData["Title"]</h2>
-            <hr class="hr" />
-            <div class="form-group d-flex align-items-center">
-                <input type="number" class="form-control" id="VideoScore" placeholder="" style="width: 3rem;">
-                <label for="VideoScore" class="px-3 mb-0">/10</label>
-            </div>
-        </div>
-
         <hr />
 
         <!-- Video Section -->
@@ -122,16 +112,161 @@
             </div>
         }
 
+
+
+        @using (Html.BeginForm())
+        {
+            if (Model.IsDone == false)
+            {
+                if (Model.TestTitle == "Body Mass Index")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter your Height in meters" } })
+                                <br />
+                                @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter your Weight in kilograms" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "3-Minute Step Test")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.BeforeHearthRate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Heart rate before exercise" } })
+                                <br />
+                                @Html.EditorFor(model => model.AfterHearthRate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Heart rate after the exercise" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Push up")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.NumberOfPushUps, new { htmlAttributes = new { @class = "form-control", @placeholder = "Number of push-ups made" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Basic Plank")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.PlankTime, new { htmlAttributes = new { @class = "form-control", @placeholder = "Plank Time" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Zipper Test")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.RightZipper, new { htmlAttributes = new { @class = "form-control", @placeholder = "Right" } })
+                                <br />
+                                @Html.EditorFor(model => model.LeftZipper, new { htmlAttributes = new { @class = "form-control", @placeholder = "Left" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Sit and Reach")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.SitAndReachFirstTry, new { htmlAttributes = new { @class = "form-control", @placeholder = "First try" } })
+                                <br />
+                                @Html.EditorFor(model => model.SitAndReachSecondTry, new { htmlAttributes = new { @class = "form-control", @placeholder = "Second try" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Juggling")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.JugglingHits, new { htmlAttributes = new { @class = "form-control", @placeholder = "Highest Score" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                // insert hexagon
+                else if (Model.TestTitle == "40-Meter Sprint")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.SprintTime, new { htmlAttributes = new { @class = "form-control", @placeholder = "Time" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Standing Long Jump")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.LongJumpFirstTry, new { htmlAttributes = new { @class = "form-control", @placeholder = "First try" } })
+                                <br />
+                                @Html.EditorFor(model => model.LongJumpSecondTry, new { htmlAttributes = new { @class = "form-control", @placeholder = "Second try" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Stork Balance Stand Test")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.BalanceRight, new { htmlAttributes = new { @class = "form-control", @placeholder = "Right foot" } })
+                                <br />
+                                @Html.EditorFor(model => model.BalanceLeft, new { htmlAttributes = new { @class = "form-control", @placeholder = "Left foot" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.TestTitle == "Stick Drop Test")
+                {
+                    <div class="col">
+                        <div class="mb-3 w-25">
+                            <div class="card-body">
+                                @Html.EditorFor(model => model.StickDrop1, new { htmlAttributes = new { @class = "form-control", @placeholder = "Test 1" } })
+                                <br />
+                                @Html.EditorFor(model => model.StickDrop2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Test 2" } })
+                                <br />
+                                @Html.EditorFor(model => model.StickDrop3, new { htmlAttributes = new { @class = "form-control", @placeholder = "Test 3" } })
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="form-group d-flex align-items-center">
+                    @Html.HiddenFor(model => model.TestTitle)
+                    @Html.HiddenFor(model => model.NextPage)
+                </div>
+
+                <button class="btn btn-outline-primary bg-b mb-3" type="submit">SUBMIT</button>
+            }
+        }
+
         <!-- Navigation Buttons -->
         <div class="d-flex w-100 justify-content-between">
             <button class="btn btn-outline-primary bg-b mb-3" type="button"
                     onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["PreviousPage"] })'">
-                Go back to the previous video
+                << Previous exercise
             </button>
+
             <button class="btn btn-outline-primary bg-b mb-3" type="button"
                     onclick="location.href='@Url.Action("VideoPage", "Test", new { page = ViewData["NextPage"] })'">
-                Go to next exercise
+                Next exercise >>
             </button>
         </div>
+
     </div>
 </main>

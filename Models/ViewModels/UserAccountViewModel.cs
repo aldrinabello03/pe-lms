@@ -64,6 +64,7 @@ namespace PELMS.Models.ViewModels
         public string School { get; set; }        
         public int Age { get; set; }
         public int ProfileId { get; set; }
+        public string Gender { get; set; }
     }
 
 }

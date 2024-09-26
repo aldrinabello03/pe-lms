@@ -19,9 +19,9 @@
             </li>
         }
 
-        <li class="nav-item w-100">
+        @*<li class="nav-item w-100">
             @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
+        </li>*@
         <li class="nav-item w-100">
             @Html.ActionLink("ABOUT", "About", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
         </li>
@@ -40,7 +40,7 @@
                     @Html.ActionLink("FITNESS TEST", "VideoPage", "Test", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
                 </li>
                 <li class="nav-item w-100">
-                    @Html.ActionLink("MY SCORE CARD", "ScoreCard", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                    @Html.ActionLink("MY FITNESS DASHBOARD", "ScoreCard", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
                 </li>
             }
             else if (user.Role == "Teacher")
@@ -68,10 +68,24 @@
 <div class="px-3 pb-4 w-100">
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
         <li class="nav-item w-100">
-            @if (!string.IsNullOrEmpty(userName))
+            @using (Html.BeginForm("Exit", "UserAccount", FormMethod.Post, new { id = "exitForm" }))
             {
-                @Html.ActionLink(userName, "ScoreCard", "StudentProfile", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+                if (!string.IsNullOrEmpty(userName))
+                {
+                    if (user.Role == "Student")
+                    {
+                        @Html.ActionLink(userName, "ScoreCard", "StudentProfile", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(userName, "Index", "StudentProfile", new { area = "" }, new { @class = "btn btn-outline-primary w-100" })
+                    }
+
+                    <br /><br />
+                    <button class="btn btn-outline-primary w-100" type="submit">LOGOUT</button>
+                }
             }
+
         </li>
         <li class="nav-item w-100 mt-3 text-white">
             @Html.Partial("_Footer")
