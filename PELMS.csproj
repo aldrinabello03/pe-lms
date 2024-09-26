@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="Models\StudentScore.cs" />
     <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Models\ViewModels\TestViewModel.cs" />
     <Compile Include="Models\ViewModels\UserAccountViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
