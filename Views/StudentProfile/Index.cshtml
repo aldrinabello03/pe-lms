@@ -1,36 +1,68 @@
 ﻿@model IEnumerable<PELMS.Models.ViewModels.StudentProfileViewModel>
 
 @{
-    ViewBag.Title = "Students List";
+    ViewBag.Title = "MY STUDENTS";
 }
 
-<h2>Students List</h2>
+<head>
+    <style>
+        #tblStudents {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-<table class="table">
+            #tblStudents td, #tblStudents th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #tblStudents tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #tblStudents tr:hover {
+                background-color: #ddd;
+            }
+
+            #tblStudents th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+    </style>
+</head>
+<br />
+<h2>MY STUDENTS</h2>
+<br />
+
+<table id="tblStudents">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.StudentNumber)
+            Student Number
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MiddleName)
+            Middle Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            Last Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            Age
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gender)
+            Gender
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Level)
+            Level
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Section)
+            Section
         </th>
         <th></th>
     </tr>

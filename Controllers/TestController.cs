@@ -291,7 +291,7 @@ namespace PELMS.Controllers
                                 interpretatation = "Needs Improvement";
                             break;
                         case "Zipper Test":
-                            var gap = Math.Abs(viewModel.LeftZipper.Value -  viewModel.RightZipper.Value);
+                            var gap = viewModel.ZipperGap.Value;
                             if (gap >= 6)
                                 interpretatation = "Excellent";
                             else if (gap >= 4 && gap <= 5.9)
@@ -300,7 +300,7 @@ namespace PELMS.Controllers
                                 interpretatation = "Good";
                             else if (gap >= 0.1 && gap <= 1.9)
                                 interpretatation = "Fair";
-                            else if (gap < 0.1)
+                            else if (gap == 0)
                                 interpretatation = "Needs Improvement";
                             else
                                 interpretatation = "Poor";
@@ -525,8 +525,7 @@ namespace PELMS.Controllers
                             AfterHearthRate = viewModel.AfterHearthRate,
                             NumberOfPushUps = viewModel.NumberOfPushUps,
                             PlankTime = viewModel.PlankTime,
-                            RightZipper = viewModel.RightZipper,
-                            LeftZipper = viewModel.LeftZipper,
+                            ZipperGap = viewModel.ZipperGap,
                             SitAndReachFirstTry = viewModel.SitAndReachFirstTry,
                             SitAndReachSecondTry = viewModel.SitAndReachSecondTry,
                             JugglingHits = viewModel.JugglingHits,

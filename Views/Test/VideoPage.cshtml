@@ -167,9 +167,7 @@
                     <div class="col">
                         <div class="mb-3 w-25">
                             <div class="card-body">
-                                @Html.EditorFor(model => model.RightZipper, new { htmlAttributes = new { @class = "form-control", @placeholder = "Right" } })
-                                <br />
-                                @Html.EditorFor(model => model.LeftZipper, new { htmlAttributes = new { @class = "form-control", @placeholder = "Left" } })
+                                @Html.EditorFor(model => model.ZipperGap, new { htmlAttributes = new { @class = "form-control", @placeholder = "Gap or overlapped measurement" } })
                             </div>
                         </div>
                     </div>

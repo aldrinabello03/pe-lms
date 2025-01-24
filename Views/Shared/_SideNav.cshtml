@@ -4,7 +4,7 @@
 }
 
 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white">
-    <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center pb-2 mb-md-0 me-md-auto text-decoration-none w-100">
+    <a href="@Url.Action("About", "Home")" class="d-flex align-items-center pb-2 mb-md-0 me-md-auto text-decoration-none w-100">
         <img src="@Url.Content("~/Content/Images/pe-logo-sample.jpg")" alt="PE LMS" class="img-fluid rounded w-100">
     </a>
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
@@ -22,9 +22,9 @@
         @*<li class="nav-item w-100">
             @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
         </li>*@
-        <li class="nav-item w-100">
+        @*<li class="nav-item w-100">
             @Html.ActionLink("ABOUT", "About", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
-        </li>
+        </li>*@
         <li class="nav-item w-100">
             @Html.ActionLink("CONTACT US", "Contact", "Home", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
         </li>
@@ -34,7 +34,7 @@
             if (user.Role == "Student")
             {
                 <li class="nav-item w-100">
-                    @Html.ActionLink("PROFILE", "Edit", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                    @Html.ActionLink("MY PROFILE", "Edit", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
                 </li>
                 <li class="nav-item w-100">
                     @Html.ActionLink("FITNESS TEST", "VideoPage", "Test", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
@@ -46,7 +46,7 @@
             else if (user.Role == "Teacher")
             {
                 <li class="nav-item w-100">
-                    @Html.ActionLink("PROFILE", "Edit", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
+                    @Html.ActionLink("MY PROFILE", "Edit", "TeacherProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })
                 </li>
                 <li class="nav-item w-100">
                     @Html.ActionLink("MY STUDENTS", "Index", "StudentProfile", new { area = "" }, new { @class = "nav-link align-middle px-0 text-white" })

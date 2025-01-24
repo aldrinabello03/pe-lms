@@ -92,7 +92,7 @@
 				"b. Record the distance in centimeters."
 			]
 		},
-		"Scoring": "Record zipper test to the nearest 0.1 centimeter."
+		"Scoring": "Record zipper test to the nearest 0.1 centimeter. Put negative (-) if fingers have gap, 0 if fingers just touched, and positive if fingers overlapped."
 	},
 	"Flexibility2": {
 		"title": "Sit and Reach",

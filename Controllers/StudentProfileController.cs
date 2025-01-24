@@ -236,8 +236,7 @@ namespace PELMS.Controllers
                         if (student.Scores.Any(x => x.TestTitle == "Zipper Test"))
                         {
                             var score = student.Scores.Where(x => x.TestTitle == "Zipper Test").FirstOrDefault();
-                            vm.RightZipper = score.RightZipper;
-                            vm.LeftZipper = score.LeftZipper;
+                            vm.ZipperGap = score.ZipperGap;
                             vm.ZipperInterpretation = score.Interpretation;
                         }
 
@@ -300,7 +299,7 @@ namespace PELMS.Controllers
 
                     if (student != null)
                     {
-                        vm.StudentName = student.StudentProfile.FirstOrDefault().FirstName + " " + student.StudentProfile.FirstOrDefault().FirstName;
+                        vm.StudentName = student.StudentProfile.FirstOrDefault().FirstName + " " + student.StudentProfile.FirstOrDefault().LastName;
 
                         if (student.StudentProfile.Any(x => !string.IsNullOrEmpty(x.BodyType)))
                         {
@@ -334,8 +333,7 @@ namespace PELMS.Controllers
                         if (student.Scores.Any(x => x.TestTitle == "Zipper Test"))
                         {
                             var score = student.Scores.Where(x => x.TestTitle == "Zipper Test").FirstOrDefault();
-                            vm.RightZipper = score.RightZipper;
-                            vm.LeftZipper = score.LeftZipper;
+                            vm.ZipperGap = score.ZipperGap;
                             vm.ZipperInterpretation = score.Interpretation;
                         }
 

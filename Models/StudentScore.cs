@@ -14,8 +14,7 @@ namespace PELMS.Models
         public int? AfterHearthRate { get; set; }
         public int? NumberOfPushUps { get; set; }
         public int? PlankTime { get; set; }
-        public double? RightZipper { get; set; }
-        public double? LeftZipper { get; set; }
+        public double? ZipperGap { get; set; }
         public double? SitAndReachFirstTry { get; set; }
         public double? SitAndReachSecondTry { get; set; }
         public int? JugglingHits { get; set; }

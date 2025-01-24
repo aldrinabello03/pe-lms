@@ -8,7 +8,7 @@
     <section class="d-flex p-2 align-items-center justify-content-between w-100">
         <div class="d-flex align-items-center">
             @Html.Partial("_NavToggle")
-            <span class="fs-4">FITNESS DASHBOARD - @Model.StudentName</span>
+            <span class="fs-4">FITNESS DASHBOARD - <strong>@Model.StudentName</strong></span>
         </div>
     </section>
     <hr />
@@ -112,8 +112,7 @@
                     @if (!string.IsNullOrEmpty(Model.ZipperInterpretation))
                     {
                         <div class="card-body p-lg-3">
-                            <p>Right: <strong>@Model.RightZipper</strong></p>
-                            <p>Left: <strong>@Model.LeftZipper</strong></p>
+                            <p>Gap or Overlapped: <strong>@Model.ZipperGap</strong></p>
                             <p>Interpretation: <strong>@Model.ZipperInterpretation</strong></p>
                         </div>
                     }
