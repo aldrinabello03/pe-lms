@@ -127,7 +127,7 @@ public class DashboardController : ControllerBase
         {
             vm.SitAndReachFirstTry = sitReachScore.SitAndReachFirstTry;
             vm.SitAndReachSecondTry = sitReachScore.SitAndReachSecondTry;
-            vm.SitAndReachBestScore = sitReachScore.SitAndReachFirstTry >= sitReachScore.SitAndReachSecondTry
+            vm.SitAndReachBestScore = (sitReachScore.SitAndReachFirstTry ?? 0) >= (sitReachScore.SitAndReachSecondTry ?? 0)
                 ? sitReachScore.SitAndReachFirstTry : sitReachScore.SitAndReachSecondTry;
             vm.SitAndReachInterpretation = sitReachScore.Interpretation;
         }
