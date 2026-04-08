@@ -100,13 +100,10 @@ public static class InterpretationService
     public static string ComputeStickDrop(double? d1, double? d2, double? d3)
     {
         if (d1 == null || d2 == null || d3 == null) return string.Empty;
-        double middle = d1.Value;
-        if (d1 >= d2 && d1 <= d3) middle = d1.Value;
-        else if (d1 >= d3 && d1 <= d2) middle = d1.Value;
-        else if (d2 >= d3 && d2 <= d1) middle = d2.Value;
-        else if (d2 >= d1 && d2 <= d3) middle = d2.Value;
-        else if (d3 >= d1 && d3 <= d2) middle = d3.Value;
-        else if (d3 >= d2 && d3 <= d1) middle = d3.Value;
+        // Median of three values: sort and take the middle
+        double[] vals = [d1.Value, d2.Value, d3.Value];
+        Array.Sort(vals);
+        double middle = vals[1];
 
         if (middle >= 0 && middle <= 2.4) return "Excellent";
         if (middle >= 5.08 && middle <= 10.16) return "Very Good";
