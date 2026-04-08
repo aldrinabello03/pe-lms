@@ -179,6 +179,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final error = spState?.error ?? tpState?.error;
 
     // Populate only once when entering edit mode
+    // (handled by edit button press, not here)
 
 
     return Scaffold(
